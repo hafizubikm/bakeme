@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>File Source for SwfCompilerTest.php</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><h1 align="center">Source for file SwfCompilerTest.php</h1>
+<p>Documentation is available at <a href="../SWX/_tests---SwfCompilerTest.php.html">SwfCompilerTest.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><strong>&lt;?php</strong></div></li>
+<li><div class="src-line"><a name="a2"></a><font color="blue">require_once</font><strong>(</strong><font color="#66cccc">'../SwfCompiler.php'</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a3"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a4"></a><font color="blue">class&nbsp;</font><a href="../SWX/SwfCompilerTest.html">SwfCompilerTest</a>&nbsp;<font color="blue">extends&nbsp;</font>UnitTestCase</div></li>
+<li><div class="src-line"><a name="a5"></a><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a6"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">var&nbsp;</font><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">$swfCompiler</a><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a7"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a8"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../SWX/SwfCompilerTest.html#methodsetUp">setUp</a><strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a9"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a10"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a>&nbsp;=&nbsp;new&nbsp;<a href="../SWX/SwfCompiler.html">SwfCompiler</a><strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a11"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a12"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a13"></a><font color="green">/*</font></div></li>
+<li><div class="src-line"><a name="a14"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;testPush&nbsp;()</font></div></li>
+<li><div class="src-line"><a name="a15"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;{</font></div></li>
+<li><div class="src-line"><a name="a16"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//</font></div></li>
+<li><div class="src-line"><a name="a17"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Strings</font></div></li>
+<li><div class="src-line"><a name="a18"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//</font></div></li>
+<li><div class="src-line"><a name="a19"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a20"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;The&nbsp;string&nbsp;'hello'</font></div></li>
+<li><div class="src-line"><a name="a21"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;assertPushIsCorrect('hello',&nbsp;'960D000064617461000068656C6C6F00');</font></div></li>
+<li><div class="src-line"><a name="a22"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a23"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Empty&nbsp;string</font></div></li>
+<li><div class="src-line"><a name="a24"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;assertPushIsCorrect('',&nbsp;'9608000064617461000000');</font></div></li>
+<li><div class="src-line"><a name="a25"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a26"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;String&nbsp;longer&nbsp;than&nbsp;255&nbsp;characters&nbsp;(multi-byte&nbsp;length)</font></div></li>
+<li><div class="src-line"><a name="a27"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Note:&nbsp;Max&nbsp;length&nbsp;of&nbsp;a&nbsp;string&nbsp;is&nbsp;65535&nbsp;bytes.</font></div></li>
+<li><div class="src-line"><a name="a28"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$data&nbsp;=&nbsp;'0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345';</font></div></li>
+<li><div class="src-line"><a name="a29"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;assertPushIsCorrect($data,&nbsp;'960801006461746100003031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343500');</font></div></li>
+<li><div class="src-line"><a name="a30"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a31"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Array&nbsp;[1,2,3]</font></div></li>
+<li><div class="src-line"><a name="a32"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$data&nbsp;=&nbsp;array(1,&nbsp;2,&nbsp;3);</font></div></li>
+<li><div class="src-line"><a name="a33"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;assertPushIsCorrect($data,&nbsp;'961A00006461746100070300000007020000000701000000070300000042');</font></div></li>
+<li><div class="src-line"><a name="a34"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a35"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Boolean</font></div></li>
+<li><div class="src-line"><a name="a36"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$data&nbsp;=&nbsp;true;</font></div></li>
+<li><div class="src-line"><a name="a37"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;assertPushIsCorrect($data,&nbsp;'9608000064617461000501');</font></div></li>
+<li><div class="src-line"><a name="a38"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;}</font></div></li>
+<li><div class="src-line"><a name="a39"></a><font color="green">*/&nbsp;&nbsp;&nbsp;&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a40"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a41"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../SWX/SwfCompilerTest.html#methodtestCreateSwf">testCreateSwf</a><strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a42"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a43"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;Correct&nbsp;SWF&nbsp;bytecode&nbsp;that&nbsp;contains&nbsp;a&nbsp;single&nbsp;frame&nbsp;with&nbsp;the&nbsp;action&nbsp;data=&quot;hello&quot;&nbsp;in&nbsp;it</font></div></li>
+<li><div class="src-line"><a name="a44"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">/*</font></div></li>
+<li><div class="src-line"><a name="a45"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$correctSwfBytecode&nbsp;=&nbsp;'4657530631000000300A00A0000101004302FFFFFF3F0312000000960D000064617461000068656C6C6F001D0040000000';</font></div></li>
+<li><div class="src-line"><a name="a46"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a47"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$testSwfBytecode&nbsp;=&nbsp;$this-&gt;swfCompiler-&gt;createSwf('hello');</font></div></li>
+<li><div class="src-line"><a name="a48"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;assertEqual($correctSwfBytecode,&nbsp;$testSwfBytecode);</font></div></li>
+<li><div class="src-line"><a name="a49"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a50"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;TODO:&nbsp;Add&nbsp;an&nbsp;actual&nbsp;test&nbsp;for&nbsp;this&nbsp;that&nbsp;passes&nbsp;an&nbsp;array.&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a52"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a55"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a56"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;Test&nbsp;generic&nbsp;data&nbsp;to&nbsp;bytecode&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a57"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../SWX/SwfCompilerTest.html#methodtestDataToBytecode">testDataToBytecode</a><strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a58"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a59"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;'hello'</font></div></li>
+<li><div class="src-line"><a name="a60"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$correctBytecode&nbsp;</strong>=&nbsp;<font color="#66cccc">'0068656C6C6F00'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a61"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$str&nbsp;</strong>=&nbsp;<font color="#66cccc">'hello'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a62"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><strong>$correctBytecode</strong><strong>,&nbsp;</strong><strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a><strong>-&gt;</strong>dataToBytecode<strong>(</strong><strong>$str</strong><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a63"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a64"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;[1,&nbsp;2,&nbsp;3]</font></div></li>
+<li><div class="src-line"><a name="a65"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$correctBytecode&nbsp;</strong>=&nbsp;<font color="#66cccc">'961400070300000007020000000701000000070300000042'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a66"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$testBytecode&nbsp;</strong>=&nbsp;<strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a><strong>-&gt;</strong>dataToBytecode<strong>(</strong>array<strong>(</strong>1<strong>,&nbsp;</strong>2<strong>,&nbsp;</strong>3<strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a67"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><strong>$correctBytecode</strong><strong>,&nbsp;</strong><strong>$testBytecode</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a68"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a69"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;null</font></div></li>
+<li><div class="src-line"><a name="a70"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><font color="#66cccc">'02'</font><strong>,&nbsp;</strong><strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a><strong>-&gt;</strong>dataToBytecode<strong>(</strong>null<strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a71"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a72"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;Double&nbsp;float&nbsp;(3.14)</font></div></li>
+<li><div class="src-line"><a name="a73"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;$correctBytecode&nbsp;=&nbsp;'06&nbsp;B8&nbsp;1E&nbsp;09&nbsp;40&nbsp;20&nbsp;85&nbsp;EB&nbsp;51'</font></div></li>
+<li><div class="src-line"><a name="a74"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a75"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;TODO:&nbsp;Add&nbsp;tests&nbsp;for&nbsp;object,&nbsp;etc.&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a76"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a77"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a78"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a79"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;Test&nbsp;string&nbsp;to&nbsp;bytecode&nbsp;conversion</font></div></li>
+<li><div class="src-line"><a name="a80"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../SWX/SwfCompilerTest.html#methodtestStringToBytecode">testStringToBytecode</a><strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a81"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a82"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;'hello'</font></div></li>
+<li><div class="src-line"><a name="a83"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$correctBytecode&nbsp;</strong>=&nbsp;<font color="#66cccc">'0068656C6C6F00'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a84"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$str&nbsp;</strong>=&nbsp;<font color="#66cccc">'hello'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a85"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><strong>$correctBytecode</strong><strong>,&nbsp;</strong><strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a><strong>-&gt;</strong>stringToBytecode<strong>(</strong><strong>$str</strong><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a86"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a87"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;Empty&nbsp;string</font></div></li>
+<li><div class="src-line"><a name="a88"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$testBytecode&nbsp;</strong>=&nbsp;<strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a><strong>-&gt;</strong>stringToBytecode<strong>(</strong><font color="#66cccc">''</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a89"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><font color="#66cccc">'0000'</font><strong>,&nbsp;</strong><strong>$testBytecode</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a90"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong>4<strong>,&nbsp;</strong><a href="http://www.php.net/strlen">strlen</a><strong>(</strong><strong>$testBytecode</strong><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a91"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a92"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a93"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;Test&nbsp;boolean&nbsp;to&nbsp;bytecode&nbsp;conversion</font></div></li>
+<li><div class="src-line"><a name="a94"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../SWX/SwfCompilerTest.html#methodtestBooleanToBytecode">testBooleanToBytecode</a><strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a95"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a96"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;True&nbsp;test</font></div></li>
+<li><div class="src-line"><a name="a97"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><font color="#66cccc">'0501'</font><strong>,&nbsp;</strong><strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a><strong>-&gt;</strong>booleanToBytecode<strong>(</strong>true<strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a98"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a99"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;False&nbsp;test</font></div></li>
+<li><div class="src-line"><a name="a100"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><font color="#66cccc">'0500'</font><strong>,&nbsp;</strong><strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a><strong>-&gt;</strong>booleanToBytecode<strong>(</strong>false<strong>))</strong><strong>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></div></li>
+<li><div class="src-line"><a name="a101"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a102"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a103"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;Test&nbsp;array&nbsp;to&nbsp;bytecode&nbsp;conversion</font></div></li>
+<li><div class="src-line"><a name="a104"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../SWX/SwfCompilerTest.html#methodtestArrayToBytecode">testArrayToBytecode</a><strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a105"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a106"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;[1,&nbsp;2,&nbsp;3]</font></div></li>
+<li><div class="src-line"><a name="a107"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$correctBytecode&nbsp;</strong>=&nbsp;<font color="#66cccc">'961400070300000007020000000701000000070300000042'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a108"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a109"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$testBytecode&nbsp;</strong>=&nbsp;<strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a><strong>-&gt;</strong>arrayToBytecode<strong>(</strong>array<strong>(</strong>1<strong>,&nbsp;</strong>2<strong>,&nbsp;</strong>3<strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a110"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><strong>$correctBytecode</strong><strong>,&nbsp;</strong><strong>$testBytecode</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a111"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a112"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;error_log('SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS');</font></div></li>
+<li><div class="src-line"><a name="a113"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a114"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">/*</font></div></li>
+<li><div class="src-line"><a name="a115"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;data&nbsp;=&nbsp;[{x:&nbsp;1,&nbsp;y:&nbsp;2,&nbsp;z:&nbsp;3},&nbsp;{a:&nbsp;4,&nbsp;b:&nbsp;5,&nbsp;c:&nbsp;[true,&nbsp;false]},&nbsp;[6,&nbsp;7,&nbsp;{d:&nbsp;8,&nbsp;e:&nbsp;9}]];</font></div></li>
+<li><div class="src-line"><a name="a116"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;$correctBytecode&nbsp;=&nbsp;'961B0000646174610000640007080000000065000709000000070200000043960F0007070000000706000000070300000042961C000061000704000000006200070500000000630005000501070200000042960500070300000043961D0000780007010000000079000702000000007A000703000000070300000043960500070300000042';</font></div></li>
+<li><div class="src-line"><a name="a117"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$correctBytecode&nbsp;=&nbsp;'00640007080000000065000709000000070200000043960F0007070000000706000000070300000042961C000061000704000000006200070500000000630005000501070200000042960500070300000043961D0000780007010000000079000702000000007A000703000000070300000043960500070300000042';</font></div></li>
+<li><div class="src-line"><a name="a118"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$testData&nbsp;=&nbsp;array(array('x'&nbsp;=&gt;&nbsp;1,&nbsp;'y'&nbsp;=&gt;&nbsp;2,&nbsp;'z'&nbsp;=&gt;&nbsp;3),&nbsp;array('a'&nbsp;=&gt;&nbsp;4,&nbsp;'b'&nbsp;=&gt;&nbsp;5,&nbsp;'c'&nbsp;=&gt;&nbsp;array(true,&nbsp;false)),&nbsp;array(6,&nbsp;7,&nbsp;array('d'&nbsp;=&gt;&nbsp;8,&nbsp;'e'&nbsp;=&gt;&nbsp;9)));</font></div></li>
+<li><div class="src-line"><a name="a119"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a120"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;assertEqual($correctBytecode,&nbsp;$this-&gt;swfCompiler-&gt;arrayToBytecode($testData));</font></div></li>
+<li><div class="src-line"><a name="a121"></a><font color="green">*/</font></div></li>
+<li><div class="src-line"><a name="a122"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//error_log('EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE');</font></div></li>
+<li><div class="src-line"><a name="a123"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a124"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a125"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;[{x:&nbsp;1,&nbsp;y:&nbsp;2,&nbsp;z:&nbsp;3}]</font></div></li>
+<li><div class="src-line"><a name="a126"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">/*</font></div></li>
+<li><div class="src-line"><a name="a127"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$correctBytecode&nbsp;=&nbsp;'962500006461746100050100780007010000000079000702000000007A000703000000070300000043960500070200000042';</font></div></li>
+<li><div class="src-line"><a name="a128"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a129"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$testBytecode&nbsp;=&nbsp;$this-&gt;swfCompiler-&gt;arrayToBytecode(array(array('x'=&gt;1,&nbsp;'y'=&gt;2,&nbsp;'z'=&gt;3)));</font></div></li>
+<li><div class="src-line"><a name="a130"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;assertEqual($correctBytecode,&nbsp;$testBytecode);</font></div></li>
+<li><div class="src-line"><a name="a131"></a><font color="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a132"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a133"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a134"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a135"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;Test&nbsp;integer&nbsp;to&nbsp;bytecode&nbsp;conversion</font></div></li>
+<li><div class="src-line"><a name="a136"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../SWX/SwfCompilerTest.html#methodtestIntegerToBytecode">testIntegerToBytecode</a><strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a137"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a138"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$intToTest&nbsp;</strong>=&nbsp;16711680<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a139"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$correctBytecode&nbsp;</strong>=&nbsp;<font color="#66cccc">'070000FF00'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a140"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a141"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><strong>$correctBytecode</strong><strong>,&nbsp;</strong><strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a><strong>-&gt;</strong>integerToBytecode<strong>(</strong><strong>$intToTest</strong><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a142"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a143"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a144"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;Test&nbsp;double&nbsp;to&nbsp;bytecode&nbsp;conversion</font></div></li>
+<li><div class="src-line"><a name="a145"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;Note:&nbsp;Not&nbsp;all&nbsp;float&nbsp;values&nbsp;generated&nbsp;by&nbsp;PHP&nbsp;and&nbsp;Flash&nbsp;will&nbsp;be&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a146"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;entirely&nbsp;identical&nbsp;but,&nbsp;in&nbsp;testing,&nbsp;the&nbsp;slight&nbsp;difference&nbsp;in&nbsp;the&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a147"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;hex&nbsp;representation&nbsp;isn't&nbsp;large&nbsp;enough&nbsp;to&nbsp;change&nbsp;the&nbsp;actual&nbsp;value.&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a148"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;(This&nbsp;may&nbsp;be&nbsp;proven&nbsp;wrong&nbsp;with&nbsp;additional&nbsp;testing&nbsp;but&nbsp;I'm&nbsp;assuming</font></div></li>
+<li><div class="src-line"><a name="a149"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;that&nbsp;it's&nbsp;a&nbsp;fact&nbsp;of&nbsp;life&nbsp;with&nbsp;floats.)</font></div></li>
+<li><div class="src-line"><a name="a150"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../SWX/SwfCompilerTest.html#methodtestDoubleToBytecode">testDoubleToBytecode</a><strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a151"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a152"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$correctBytecode&nbsp;</strong>=&nbsp;<font color="#66cccc">'06DD9ABFBF5F633937'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a153"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$floatToTest&nbsp;</strong>=&nbsp;-0.123456789<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a154"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a155"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><strong>$correctBytecode</strong><strong>,&nbsp;</strong><strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a><strong>-&gt;</strong>doubleToBytecode<strong>(</strong><strong>$floatToTest</strong><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a156"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a157"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a158"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a159"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a160"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../SWX/SwfCompilerTest.html#methodtestGetIntAsHex">testGetIntAsHex</a><strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a161"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a162"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$intToTest&nbsp;</strong>=&nbsp;16711680<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a163"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$numBytes&nbsp;</strong>=&nbsp;8<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a164"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$correctString&nbsp;</strong>=&nbsp;<font color="#66cccc">'0000FF0000000000'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a165"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a166"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><strong>$correctString</strong><strong>,&nbsp;</strong><strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a><strong>-&gt;</strong>getIntAsHex<strong>(</strong><strong>$intToTest</strong><strong>,&nbsp;</strong><strong>$numBytes</strong><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a167"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a168"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a169"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a170"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a171"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../SWX/SwfCompilerTest.html#methodtestGetStringLengthInBytesHex">testGetStringLengthInBytesHex</a><strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a172"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a173"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;Single-byte&nbsp;length</font></div></li>
+<li><div class="src-line"><a name="a174"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$lengthInBytesHex&nbsp;</strong>=&nbsp;<strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a><strong>-&gt;</strong>getStringLengthInBytesHex<strong>(</strong><font color="#66cccc">'68656c6c6f'</font><strong>,&nbsp;</strong>2<strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a175"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><font color="#66cccc">'0500'</font><strong>,&nbsp;</strong><strong>$lengthInBytesHex</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a176"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a177"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;Double-byte&nbsp;length</font></div></li>
+<li><div class="src-line"><a name="a178"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$lengthInBytesHex&nbsp;</strong>=&nbsp;<strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a><strong>-&gt;</strong>getStringLengthInBytesHex<strong>(</strong><font color="#66cccc">'006461746100003031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343536373839303132333435363738393031323334353637383930313233343500'</font><strong>,&nbsp;</strong>2<strong>)</strong><strong>;&nbsp;&nbsp;&nbsp;&nbsp;</strong></div></li>
+<li><div class="src-line"><a name="a179"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><font color="#66cccc">'0801'</font><strong>,&nbsp;</strong><strong>$lengthInBytesHex</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a180"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a181"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a182"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//</font></div></li>
+<li><div class="src-line"><a name="a183"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;Helper&nbsp;method&nbsp;tests</font></div></li>
+<li><div class="src-line"><a name="a184"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//</font></div></li>
+<li><div class="src-line"><a name="a185"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a185"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a186"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../SWX/SwfCompilerTest.html#methodtestMakeLittleEndian">testMakeLittleEndian</a><strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a187"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a188"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;Single&nbsp;byte</font></div></li>
+<li><div class="src-line"><a name="a189"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><font color="#66cccc">'AB'</font><strong>,&nbsp;</strong><strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a><strong>-&gt;</strong>makeLittleEndian<strong>(</strong><font color="#66cccc">'AB'</font><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a190"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a191"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;Two&nbsp;bytes</font></div></li>
+<li><div class="src-line"><a name="a192"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><font color="#66cccc">'BBAA'</font><strong>,&nbsp;</strong><strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a><strong>-&gt;</strong>makeLittleEndian<strong>(</strong><font color="#66cccc">'AABB'</font><strong>))</strong><strong>;&nbsp;&nbsp;&nbsp;&nbsp;</strong></div></li>
+<li><div class="src-line"><a name="a193"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a194"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a195"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../SWX/SwfCompilerTest.html#methodtestStrhex">testStrhex</a><strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a196"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a197"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><font color="#66cccc">'68656c6c6f'</font><strong>,&nbsp;</strong><strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a><strong>-&gt;</strong>strhex<strong>(</strong><font color="#66cccc">'hello'</font><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a198"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a199"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a200"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../SWX/SwfCompilerTest.html#methodtestHexStr">testHexStr</a><strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a201"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a202"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><font color="#66cccc">'hello'</font><strong>,&nbsp;</strong><strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a><strong>-&gt;</strong>hexstr<strong>(</strong><font color="#66cccc">'68656c6c6f'</font><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a203"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a204"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a205"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//</font></div></li>
+<li><div class="src-line"><a name="a206"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;Helper&nbsp;methods</font></div></li>
+<li><div class="src-line"><a name="a207"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//</font></div></li>
+<li><div class="src-line"><a name="a208"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a208"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a209"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../SWX/SwfCompilerTest.html#methodassertPushIsCorrect">assertPushIsCorrect</a><strong>(</strong><strong>$data</strong><strong>,&nbsp;</strong><strong>$correctBytecode</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a210"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a211"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;Create&nbsp;the&nbsp;bytecode&nbsp;for&nbsp;the&nbsp;push&nbsp;statement&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a212"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;based&nbsp;on&nbsp;the&nbsp;passed&nbsp;$data.</font></div></li>
+<li><div class="src-line"><a name="a213"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$result&nbsp;</strong>=&nbsp;<strong>$this</strong><strong>-&gt;</strong><a href="../SWX/SwfCompilerTest.html#var$swfCompiler">swfCompiler</a><strong>-&gt;</strong>push<strong>(</strong><font color="#66cccc">'data'</font><strong>,&nbsp;</strong><strong>$data</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a214"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a215"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><a href="http://www.php.net/strlen">strlen</a><strong>(</strong><strong>$result</strong><strong>)</strong><strong>,&nbsp;</strong><a href="http://www.php.net/strlen">strlen</a><strong>(</strong><strong>$correctBytecode</strong><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a216"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong>assertEqual<strong>(</strong><strong>$result</strong><strong>,&nbsp;</strong><strong>$correctBytecode</strong><strong>)</strong><strong>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></div></li>
+<li><div class="src-line"><a name="a217"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a218"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a219"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a220"></a><strong>?&gt;</strong></div></li>
+</ol></div>
+</div>
+	<div id="credit">
+		<hr />
+		Documentation generated on Fri, 06 Jul 2007 19:54:53 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.1</a>
+	</div>
+</body>
+</html>

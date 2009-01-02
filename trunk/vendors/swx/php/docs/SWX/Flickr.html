@@ -1,0 +1,1833 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class Flickr</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class Flickr
+</h2> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a16">16</a></span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_services---Flickr.php.html">/services/Flickr.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$api" title="details" class="property"><strong>$api</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$API_KEY" title="details" class="property"><strong>$API_KEY</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$SHARED_SECRET" title="details" class="property"><strong>$SHARED_SECRET</strong></a>
+</div>
+<hr />
+<a name="var$api" id="var$api"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$api</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a20">20</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$API_KEY" id="var$API_KEY"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$API_KEY =  &quot;e7efb59164979981686e62d8bcc473be&quot;</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a18">18</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$SHARED_SECRET" id="var$SHARED_SECRET"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$SHARED_SECRET =  &quot;2be064bed40b0b78&quot;</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a19">19</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">Flickr</span>
+        <a href="#methodFlickr" title="details" class="method-name">Flickr</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodactivityUserComments" title="details" class="method-name">activityUserComments</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodactivityUserPhotos" title="details" class="method-name">activityUserPhotos</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$timeframe</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">(str)</span>
+        <a href="#methodauthGetFrob" title="details" class="method-name">authGetFrob</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">(str)</span>
+        <a href="#methodauthGetToken" title="details" class="method-name">authGetToken</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$frob</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">(str)</span>
+        <a href="#methodauthGetUrl" title="details" class="method-name">authGetUrl</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$frob</span>, [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$perms</span> = <span class="var-default">&quot;read&quot;</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodblogsGetList" title="details" class="method-name">blogsGetList</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">(bool)</span>
+        <a href="#methodblogsPostPhoto" title="details" class="method-name">blogsPostPhoto</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, <span class="var-type">(str)</span>&nbsp;<span class="var-name">$blogId</span>, <span class="var-type">(str)</span>&nbsp;<span class="var-name">$photoId</span>, <span class="var-type">(str)</span>&nbsp;<span class="var-name">$title</span>, <span class="var-type">(str)</span>&nbsp;<span class="var-name">$description</span>, [<span class="var-type">(str)</span>&nbsp;<span class="var-name">$blogPassword</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodcontactsGetList" title="details" class="method-name">contactsGetList</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$filter</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$per_page</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodcontactsGetPublicList" title="details" class="method-name">contactsGetPublicList</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$userId</span>, [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">True/False</span>
+        <a href="#methodfavoritesAdd" title="details" class="method-name">favoritesAdd</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, <span class="var-type">(str)</span>&nbsp;<span class="var-name">$photoId</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodfavoritesGetList" title="details" class="method-name">favoritesGetList</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$userId</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$extras</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodfavoritesGetPublicList" title="details" class="method-name">favoritesGetPublicList</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$userId</span>, [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$extras</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">True/False</span>
+        <a href="#methodfavoritesRemove" title="details" class="method-name">favoritesRemove</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, <span class="var-type">(str)</span>&nbsp;<span class="var-name">$photoId</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetUserPhotos" title="details" class="method-name">getUserPhotos</a>
+        (<span class="var-type"><a href="../SWX/Flickr.html">Flickr</a></span>&nbsp;<span class="var-name">$userName</span>, [<span class="var-type">Style</span>&nbsp;<span class="var-name">$photoStyle</span> = <span class="var-default">&quot;medium&quot;</span>], [<span class="var-type">Number</span>&nbsp;<span class="var-name">$numPhotos</span> = <span class="var-default">10</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">1</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">Category</span>
+        <a href="#methodgroupsBrowse" title="details" class="method-name">groupsBrowse</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$catId</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">Information</span>
+        <a href="#methodgroupsGetInfo" title="details" class="method-name">groupsGetInfo</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$groupId</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">True/False</span>
+        <a href="#methodgroupsPoolAdd" title="details" class="method-name">groupsPoolAdd</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, <span class="var-type">(str)</span>&nbsp;<span class="var-name">$photoId</span>, <span class="var-type">(str)</span>&nbsp;<span class="var-name">$groupId</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">The</span>
+        <a href="#methodgroupsPoolsGetContext" title="details" class="method-name">groupsPoolsGetContext</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$photoId</span>, <span class="var-type">(str)</span>&nbsp;<span class="var-name">$groupId</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodgroupsPoolsGetGroups" title="details" class="method-name">groupsPoolsGetGroups</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodgroupsPoolsGetPhotos" title="details" class="method-name">groupsPoolsGetPhotos</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$groupId</span>, [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$tags</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$userId</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$extras</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">True/Error</span>
+        <a href="#methodgroupsPoolsRemove" title="details" class="method-name">groupsPoolsRemove</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, <span class="var-type">(str)</span>&nbsp;<span class="var-name">$photoId</span>, <span class="var-type">(str)</span>&nbsp;<span class="var-name">$groupId</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodgroupsSearch" title="details" class="method-name">groupsSearch</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$text</span>, [<span class="var-type">(int)</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int)</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str;</span>&nbsp;<span class="var-name">$token</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodinterestingnessGetList" title="details" class="method-name">interestingnessGetList</a>
+        ([<span class="var-type">(str,</span>&nbsp;<span class="var-name">$date</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$extras</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">User's</span>
+        <a href="#methodpeopleFindByEmail" title="details" class="method-name">peopleFindByEmail</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$findEmail</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">User's</span>
+        <a href="#methodpeopleFindByUsername" title="details" class="method-name">peopleFindByUsername</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$userName</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">User</span>
+        <a href="#methodpeopleGetInfo" title="details" class="method-name">peopleGetInfo</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$userId</span>, [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$token</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodpeopleGetPublicGroups" title="details" class="method-name">peopleGetPublicGroups</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$userId</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodpeopleGetPublicPhotos" title="details" class="method-name">peopleGetPublicPhotos</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$userId</span>, [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$extra</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">Information</span>
+        <a href="#methodpeopleGetUploadStatus" title="details" class="method-name">peopleGetUploadStatus</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">True/False</span>
+        <a href="#methodphotosAddTags" title="details" class="method-name">photosAddTags</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, <span class="var-type">(str)</span>&nbsp;<span class="var-name">$photoId</span>, <span class="var-type">(str)</span>&nbsp;<span class="var-name">$tags</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">True/False</span>
+        <a href="#methodphotosDelete" title="details" class="method-name">photosDelete</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, <span class="var-type">(str)</span>&nbsp;<span class="var-name">$photoId</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">All</span>
+        <a href="#methodphotosGetAllContexts" title="details" class="method-name">photosGetAllContexts</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$photoId</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodphotosGetContactsPhotos" title="details" class="method-name">photosGetContactsPhotos</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$count</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$justFriends</span> = <span class="var-default">NULL</span>], [<span class="var-type">(?,</span>&nbsp;<span class="var-name">$singlePhoto</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$includeSelf</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$extras</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodphotosGetContactsPublicPhotos" title="details" class="method-name">photosGetContactsPublicPhotos</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$userId</span>, [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$count</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$justFriends</span> = <span class="var-default">NULL</span>], [<span class="var-type">(?,</span>&nbsp;<span class="var-name">$singlePhoto</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$includeSelf</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$extras</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">Next</span>
+        <a href="#methodphotosGetContext" title="details" class="method-name">photosGetContext</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$photoId</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodphotosGetCounts" title="details" class="method-name">photosGetCounts</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$dates</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$takenDates</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodphotosGetExif" title="details" class="method-name">photosGetExif</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$photoId</span>, [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$secret</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodphotosGetFavorites" title="details" class="method-name">photosGetFavorites</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$photoId</span>, [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">Information</span>
+        <a href="#methodphotosGetInfo" title="details" class="method-name">photosGetInfo</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$photoId</span>, [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$secret</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodphotosGetNotInSet" title="details" class="method-name">photosGetNotInSet</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$minUploadDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$maxUploadDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$minTakenDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$maxTakenDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$privacyFilter</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$extras</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">Permissions</span>
+        <a href="#methodphotosGetPerms" title="details" class="method-name">photosGetPerms</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, <span class="var-type">(str)</span>&nbsp;<span class="var-name">$photoId</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodphotosGetRecent" title="details" class="method-name">photosGetRecent</a>
+        ([<span class="var-type">(str,</span>&nbsp;<span class="var-name">$extras</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">The</span>
+        <a href="#methodphotosGetSizes" title="details" class="method-name">photosGetSizes</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$photoId</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodphotosGetUntagged" title="details" class="method-name">photosGetUntagged</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$minUploadDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$maxUploadDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$minTakenDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$maxTakenDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$privacyFilter</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$extras</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodphotosGetWithGeoData" title="details" class="method-name">photosGetWithGeoData</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$minUploadDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$maxUploadDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$minTakenDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$maxTakenDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$privacyFilter</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$sort</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$extras</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodphotosGetWithoutGeoData" title="details" class="method-name">photosGetWithoutGeoData</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$minUploadDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$maxUploadDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$minTakenDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$maxTakenDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$privacyFilter</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$sort</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$extras</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodphotosRecentlyUpdated" title="details" class="method-name">photosRecentlyUpdated</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, [<span class="var-type">(str)</span>&nbsp;<span class="var-name">$minDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$extras</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">True</span>
+        <a href="#methodphotosRemoveTag" title="details" class="method-name">photosRemoveTag</a>
+        (<span class="var-type">(str)</span>&nbsp;<span class="var-name">$token</span>, <span class="var-type">(str)</span>&nbsp;<span class="var-name">$tagId</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">List</span>
+        <a href="#methodphotosSearch" title="details" class="method-name">photosSearch</a>
+        ([<span class="var-type">(str,</span>&nbsp;<span class="var-name">$token</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$userId</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$tags</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$tagMode</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$text</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$minUploadDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$maxUploadDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$minTakenDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$maxTakenDate</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$license</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$sort</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$privacyFilter</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$bbox</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$accuracy</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$safeSearch</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$contentType</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$machineTags</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$machineTagMode</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$groupId</span> = <span class="var-default">NULL</span>], [<span class="var-type">(str,</span>&nbsp;<span class="var-name">$extras</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">NULL</span>], [<span class="var-type">(int,</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#method_getResult" title="details" class="method-name">_getResult</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$result</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodFlickr" id="methodFlickr"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor Flickr</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a22">22</a></span>)
+ </h4> 
+<h4><i>Flickr</i> <strong>Flickr(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodactivityUserComments" id="methodactivityUserComments"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method activityUserComments</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a117">117</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>activityUserComments(
+(str)
+$token, [(int,
+$perPage = NULL], [(int,
+$page = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a list of recent activity on photos commented on by the calling user.</h5>
+<div class="desc"><p>Do not poll this method more than once an hour.</p><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.activity.userComments.html</p><p>Requires read authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(int, $perPage</strong>: optional) Number of items to return per page. If this argument is omitted, it defaults to 10. The maximum allowed value is 50.</li>
+			<li><strong>(int, $page</strong>: optional) The page of results to return. If this argument is omitted, it defaults to 1.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of recent activity on photos commented on by the calling user.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodactivityUserPhotos" id="methodactivityUserPhotos"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method activityUserPhotos</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a143">143</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>activityUserPhotos(
+(str)
+$token, [(str,
+$timeframe = NULL], [(int,
+$perPage = NULL], [(int,
+$page = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a list of recent activity on photos belonging to the calling user.</h5>
+<div class="desc"><p>Do not poll this method more than once an hour.</p><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.activity.userPhotos.html</p><p>Requires read authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str, $timeframe</strong>: optional) The timeframe in which to return updates for. This can be specified in days ('2d') or hours ('4h'). The default behavoir is to return changes since the beginning of the previous user session.</li>
+			<li><strong>(int, $perPage</strong>: optional) Number of items to return per page. If this argument is omitted, it defaults to 10. The maximum allowed value is 50.</li>
+			<li><strong>(int, $page</strong>: optional) The page of results to return. If this argument is omitted, it defaults to 1.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of recent activity on photos belonging to the calling user.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodauthGetFrob" id="methodauthGetFrob"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method authGetFrob</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a179">179</a></span>)
+ </h4> 
+<h4><i>(str)</i> <strong>authGetFrob(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a frob to be used during authentication.</h5>
+<div class="desc"><p>To authenticate a user using the SWX Flickr API:</p><p><ol><li>First call this method and get the magic frob value.</li><li>Call the authGetUrl() method and pass the frob as well as the type of authentication you want (&quot;read&quot;, &quot;write&quot;, &quot;delete&quot;). This will return a URL.</li><li>Send the user to the URL returned in Step 2. Flickr will ask them to authorize your application. Once they've done that, they'll return to your application.</li><li>Call the authGetToken() method and pass the frob. If the user granted your application the correct permissions, you should get a token back. Send this token for all authenticated calls.</li></ol>  Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.auth.getFrob.html</p><p>Original Flickr authorization spec:  http://www.flickr.com/services/api/auth.spec.html</p><p>Flickr Desktop Applications How-To:  http://www.flickr.com/services/api/auth.howto.desktop.html</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Frob.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodauthGetToken" id="methodauthGetToken"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method authGetToken</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a227">227</a></span>)
+ </h4> 
+<h4><i>(str)</i> <strong>authGetToken(
+(str)
+$frob)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns the token you need to make authenticated calls if the user has authenticated  your application.</h5>
+<div class="desc"><p>For a full explanation of the authorization system in the  SWX Flickr API, see the notes on the authGetFrob() method.</p><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.auth.getToken.html</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $frob</strong>: The frob that was returned by the authGetFrob() method.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Flickr auth token.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodauthGetUrl" id="methodauthGetUrl"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method authGetUrl</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a201">201</a></span>)
+ </h4> 
+<h4><i>(str)</i> <strong>authGetUrl(
+(str)
+$frob, [(str,
+$perms = &quot;read&quot;])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns the authentication url to redirect the user to so  they can log in and authorize the Flash application. (This  uses the authentication mechanism for desktop applications, which  is the one that works best for Flash applications).</h5>
+<div class="desc"><p>For a full explanation of the authorization system in the  SWX Flickr API, see the notes on the authGetFrob() method.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $frob</strong>: The frob that was returned by the authGetFrob() method.</li>
+			<li><strong>(str, $perms</strong>: optional) The permissions being requested (&quot;read&quot;|&quot;write&quot;|&quot;delete&quot;). Write includes read, and delete includes both read and write permissions. Defaults to read.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - URL to send user to so they can authorize the application.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodblogsGetList" id="methodblogsGetList"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method blogsGetList</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a252">252</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>blogsGetList(
+(str)
+$token)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Get a list of configured blogs for the calling user.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.blogs.getList.html</p><p>Requires read authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of blogs for the calling user.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodblogsPostPhoto" id="methodblogsPostPhoto"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method blogsPostPhoto</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a279">279</a></span>)
+ </h4> 
+<h4><i>(bool)</i> <strong>blogsPostPhoto(
+(str)
+$token, (str)
+$blogId, (str)
+$photoId, (str)
+$title, (str)
+$description, [(str)
+$blogPassword = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Posts a photo to the blog with the passed id.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.blogs.postPhoto.html</p><p>Requires write authentication</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str) $blogId</strong>: The id of the blog to post to.</li>
+			<li><strong>(str) $photoId</strong>: The id of the photo to blog.</li>
+			<li><strong>(str) $title</strong>: The blog post title.</li>
+			<li><strong>(str) $description</strong>: The blog post body.</li>
+			<li><strong>(str) $blogPassword</strong>: The password for the blog (used when the blog does not have a stored password).</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - True/False depending on whether the call succeeded or failed.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodcontactsGetList" id="methodcontactsGetList"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method contactsGetList</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a316">316</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>contactsGetList(
+(str)
+$token, [(str,
+$filter = NULL], [(int,
+$page = NULL], [(int,
+$per_page = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Get a list of contacts for the calling user.</h5>
+<div class="desc"><p>Valid values for the filter parameter, below, are:</p><p>friends: Only contacts who are friends (and not family).  family: Only contacts who are family (and not friends).  both: Only contacts who are both friends and family.  neither: Only contacts who are neither friends nor family.</p><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.contacts.getList.html</p><p>Requires read authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str, $filter</strong>: optional) An optional filter of the results.</li>
+			<li><strong>(int, $page</strong>: optional) The page of results to return. If this argument is omitted, it defaults to 1.</li>
+			<li><strong>(int, $per_page</strong>: optional) Number of photos to return per page. If this argument is omitted, it defaults to 1000. The maximum allowed value is 1000.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of contacts or false on error.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodcontactsGetPublicList" id="methodcontactsGetPublicList"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method contactsGetPublicList</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a343">343</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>contactsGetPublicList(
+(str)
+$userId, [(int,
+$page = NULL], [(int,
+$perPage = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Get the contact list for a user.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.contacts.getPublicList.html</p><p>Does not require authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $userId</strong>: The NSID of the user to fetch the contact list for.</li>
+			<li><strong>(int, $page</strong>: optional) The page of results to return. If this argument is omitted, it defaults to 1.</li>
+			<li><strong>(int, $perPage</strong>: optional) Number of contacts to return per page. If this argument is omitted, it defaults to 1000. The maximum allowed value is 1000.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of contacts for the user.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodfavoritesAdd" id="methodfavoritesAdd"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method favoritesAdd</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a421">421</a></span>)
+ </h4> 
+<h4><i>True/False</i> <strong>favoritesAdd(
+(str)
+$token, (str)
+$photoId)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Adds a photo to a user's favorites list.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.favorites.add.html</p><p>Requires write authentication and a POST request.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str) $photoId</strong>: The id of the photo to add to the user's favorites.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - depending on whether call was successful.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodfavoritesGetList" id="methodfavoritesGetList"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method favoritesGetList</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a374">374</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>favoritesGetList(
+(str)
+$token, [(str,
+$userId = NULL], [(str,
+$extras = NULL], [(int,
+$perPage = NULL], [(int,
+$page = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a list of the user's favorite photos.</h5>
+<div class="desc"><p>Only photos which the calling user has permission to see are returned.</p><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.favorites.getList.html</p><p>Requires read authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str, $userId</strong>: optional) The NSID of the user to fetch the favorites list for. If this argument is omitted, the favorites list for the calling user is returned.</li>
+			<li><strong>(str, $extras</strong>: optional) A comma-delimited list of extra information to fetch for each returned record. Currently supported fields are: license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags.</li>
+			<li><strong>(int, $perPage</strong>: optional) Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500.</li>
+			<li><strong>(int, $page</strong>: optional) The page of results to return. If this argument is omitted, it defaults to 1.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of user's favorite photos.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodfavoritesGetPublicList" id="methodfavoritesGetPublicList"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method favoritesGetPublicList</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a399">399</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>favoritesGetPublicList(
+(str)
+$userId, [(str,
+$extras = NULL], [(int,
+$perPage = NULL], [(int,
+$page = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a list of favorite public photos for the given user.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.favorites.getPublicList.html</p><p>Does not require authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $userId</strong>: The user to fetch the favorites list for.</li>
+			<li><strong>(str, $extras</strong>: optional) A comma-delimited list of extra information to fetch for each returned record. Currently supported fields are: license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags.</li>
+			<li><strong>(int, $perPage</strong>: optional) Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500.</li>
+			<li><strong>(int, $page</strong>: optional) The page of results to return. If this argument is omitted, it defaults to 1.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of favorite public photos for the given user.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodfavoritesRemove" id="methodfavoritesRemove"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method favoritesRemove</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a444">444</a></span>)
+ </h4> 
+<h4><i>True/False</i> <strong>favoritesRemove(
+(str)
+$token, (str)
+$photoId)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Removes a photo from a user's favorites list.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.favorites.remove.html</p><p>Requires write authentication and a POST request.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str) $photoId</strong>: The id of the photo to remove from the user's favorites.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - depending on whether call was successful.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodgetUserPhotos" id="methodgetUserPhotos"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getUserPhotos</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a44">44</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>getUserPhotos(
+<a href="../SWX/Flickr.html">Flickr</a>
+$userName, [Style
+$photoStyle = &quot;medium&quot;], [Number
+$numPhotos = 10], [
+$page = 1])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns the requested number of photos for the specified user.</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../SWX/Flickr.html">Flickr</a> $userName</strong>: user name</li>
+			<li><strong>Style $photoStyle</strong>: of photo as string (square, thumbnail, small, medium, large, original)</li>
+			<li><strong>Number $numPhotos</strong>: of photos to receive</li>
+			<li><strong> $page</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodgroupsBrowse" id="methodgroupsBrowse"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method groupsBrowse</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a472">472</a></span>)
+ </h4> 
+<h4><i>Category</i> <strong>groupsBrowse(
+(str)
+$token, [(str,
+$catId = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Browse the group category tree, finding groups and sub-categories.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.groups.browse.html</p><p>Requires read authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str, $catId</strong>: optional) The category id to fetch a list of groups and sub-categories for. If not specified, it defaults to zero, the root of the category tree.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - information.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodgroupsGetInfo" id="methodgroupsGetInfo"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method groupsGetInfo</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a523">523</a></span>)
+ </h4> 
+<h4><i>Information</i> <strong>groupsGetInfo(
+(str)
+$groupId)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Get information about a group.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.groups.getInfo.html</p><p>Does not require authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $groupId</strong>: The NSID of the group to fetch information for.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - on requested group.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodgroupsPoolAdd" id="methodgroupsPoolAdd"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method groupsPoolAdd</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a551">551</a></span>)
+ </h4> 
+<h4><i>True/False</i> <strong>groupsPoolAdd(
+(str)
+$token, (str)
+$photoId, (str)
+$groupId)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Add a photo to a group's pool.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.groups.pools.add.html</p><p>Requires write authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str) $photoId</strong>: The id of the photo to add to the group pool. The photo must belong to the calling user.</li>
+			<li><strong>(str) $groupId</strong>: The NSID of the group who's pool the photo is to be added to.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - depending on whether call was successful.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodgroupsPoolsGetContext" id="methodgroupsPoolsGetContext"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method groupsPoolsGetContext</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a574">574</a></span>)
+ </h4> 
+<h4><i>The</i> <strong>groupsPoolsGetContext(
+(str)
+$photoId, (str)
+$groupId)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns next and previous photos for a photo in a group pool.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.groups.pools.getContext.html</p><p>Does not require authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $photoId</strong>: The id of the photo to fetch the context for.</li>
+			<li><strong>(str) $groupId</strong>: The nsid of the group who's pool to fetch the photo's context for.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - next and previous photos for requested photo, in the requested group.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodgroupsPoolsGetGroups" id="methodgroupsPoolsGetGroups"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method groupsPoolsGetGroups</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a597">597</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>groupsPoolsGetGroups(
+(str)
+$token, [(int,
+$page = NULL], [(int,
+$perPage = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a list of groups to which you can add photos.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.groups.pools.getGroups.html</p><p>Requires read authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(int, $page</strong>: optional) The page of results to return. If this argument is omitted, it defaults to 1.</li>
+			<li><strong>(int, $perPage</strong>: optional) Number of groups to return per page. If this argument is omitted, it defaults to 400. The maximum allowed value is 400.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of groups to which you can add photos.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodgroupsPoolsGetPhotos" id="methodgroupsPoolsGetPhotos"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method groupsPoolsGetPhotos</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a625">625</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>groupsPoolsGetPhotos(
+(str)
+$groupId, [(str,
+$tags = NULL], [(str,
+$userId = NULL], [(str,
+$extras = NULL], [(int,
+$perPage = NULL], [(int,
+$page = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a list of pool photos for a given group,  based on the permissions of the group and the user logged in (if any).</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.groups.pools.getPhotos.html</p><p>Does not require authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $groupId</strong>: The id of the group who's pool you which to get the photo list for.</li>
+			<li><strong>(str, $tags</strong>: optional) A tag to filter the pool with. At the moment only one tag at a time is supported.</li>
+			<li><strong>(str, $userId</strong>: optional) The nsid of a user. Specifiying this parameter will retrieve for you only those photos that the user has contributed to the group pool.</li>
+			<li><strong>(str, $extras</strong>: optional) A comma-delimited list of extra information to fetch for each returned record. Currently supported fields are: license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags.</li>
+			<li><strong>(int, $perPage</strong>: optional) Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500.</li>
+			<li><strong>(int, $page</strong>: optional) The page of results to return. If this argument is omitted, it defaults to 1.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of pool photos for a given group.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodgroupsPoolsRemove" id="methodgroupsPoolsRemove"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method groupsPoolsRemove</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a648">648</a></span>)
+ </h4> 
+<h4><i>True/Error</i> <strong>groupsPoolsRemove(
+(str)
+$token, (str)
+$photoId, (str)
+$groupId)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Remove a photo from a group pool.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.groups.pools.remove.html</p><p>Requires write authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str) $photoId</strong>: The id of the photo to remove from the group pool. The photo must either be owned by the calling user of the calling user must be an administrator of the group.</li>
+			<li><strong>(str) $groupId</strong>: The NSID of the group who's pool the photo is to removed from.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - obj depending on whether call was successful.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodgroupsSearch" id="methodgroupsSearch"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method groupsSearch</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a498">498</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>groupsSearch(
+(str)
+$text, [(int)
+$perPage = NULL], [(int)
+$page = NULL], [(str;
+$token = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Search for groups.</h5>
+<div class="desc"><p>18+ groups will only be returned for authenticated calls where the authenticated user is over 18.</p><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.groups.search.html</p><p>Does not require authentication unless you also want to receive 18+ groups.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $text</strong>: Text to search for.</li>
+			<li><strong>(int) $perPage</strong>: Number of groups to return per page. If this argument is ommited, it defaults to 100. The maximum allowed value is 500.</li>
+			<li><strong>(int) $page</strong>: The page of results to return. If this argument is ommited, it defaults to 1.</li>
+			<li><strong>(str; $token</strong>: optional) The auth token that was returned by authGetToken(). Only required to receive 18+ groups.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of groups matching the search.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodinterestingnessGetList" id="methodinterestingnessGetList"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method interestingnessGetList</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a677">677</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>interestingnessGetList(
+[(str,
+$date = NULL], [(str,
+$extras = NULL], [(int,
+$perPage = NULL], [(int,
+$page = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns the list of interesting photos for the most recent day or a user-specified date.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.interestingness.getList.html</p><p>Does not require authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str, $date</strong>: optional) A specific date, formatted as YYYY-MM-DD, to return interesting photos for.</li>
+			<li><strong>(str, $extras</strong>: optional) A comma-delimited list of extra information to fetch for each returned record. Currently supported fields are: license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags.</li>
+			<li><strong>(int, $perPage</strong>: optional) Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500.</li>
+			<li><strong>(int, $page</strong>: optional) The page of results to return. If this argument is omitted, it defaults to 1.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of interesting photos for the most recent day or a user-specified date.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodpeopleFindByEmail" id="methodpeopleFindByEmail"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method peopleFindByEmail</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a701">701</a></span>)
+ </h4> 
+<h4><i>User's</i> <strong>peopleFindByEmail(
+(str)
+$findEmail)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return a user's NSID, given their email address</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.people.findByEmail.html</p><p>Does not require authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $findEmail</strong>: The email address of the user to find (may be primary or secondary).</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - NSID.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodpeopleFindByUsername" id="methodpeopleFindByUsername"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method peopleFindByUsername</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a722">722</a></span>)
+ </h4> 
+<h4><i>User's</i> <strong>peopleFindByUsername(
+(str)
+$userName)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return a user's NSID, given their username.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.people.findByUsername.html</p><p>Does not require authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $userName</strong>: The username of the user to lookup.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - NSID.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodpeopleGetInfo" id="methodpeopleGetInfo"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method peopleGetInfo</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a745">745</a></span>)
+ </h4> 
+<h4><i>User</i> <strong>peopleGetInfo(
+(str)
+$userId, [(str,
+$token = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Get information about a user.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.people.getInfo.html</p><p>Does not require authentication but will return additional information  if authenticated.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $userId</strong>: The NSID of the user to fetch information about.</li>
+			<li><strong>(str, $token</strong>: optional) The auth token that was returned by authGetToken().</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - info.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodpeopleGetPublicGroups" id="methodpeopleGetPublicGroups"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method peopleGetPublicGroups</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a771">771</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>peopleGetPublicGroups(
+(str)
+$userId)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns the list of public groups a user is a member of.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.people.getPublicGroups.html</p><p>Does not require authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $userId</strong>: The NSID of the user to fetch groups for.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of public groups a user is a member of.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodpeopleGetPublicPhotos" id="methodpeopleGetPublicPhotos"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method peopleGetPublicPhotos</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a795">795</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>peopleGetPublicPhotos(
+(str)
+$userId, [(str,
+$extra = NULL], [(int,
+$perPage = NULL], [(int,
+$page = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Get a list of public photos for the given user.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.people.getPublicPhotos.html</p><p>Does not require authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $userId</strong>: The NSID of the user who's photos to return.</li>
+			<li><strong>(str, $extra</strong>: optional) A comma-delimited list of extra information to fetch for each returned record. Currently supported fields are: license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags.</li>
+			<li><strong>(int, $perPage</strong>: optional) Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500.</li>
+			<li><strong>(int, $page</strong>: optional) The page of results to return. If this argument is omitted, it defaults to 1.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of public photos for the given user.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodpeopleGetUploadStatus" id="methodpeopleGetUploadStatus"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method peopleGetUploadStatus</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a816">816</a></span>)
+ </h4> 
+<h4><i>Information</i> <strong>peopleGetUploadStatus(
+(str)
+$token)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns information for the calling user related to photo uploads.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.people.getUploadStatus.html</p><p>Requires read authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - for the calling user related to photo uploads.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosAddTags" id="methodphotosAddTags"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosAddTags</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a845">845</a></span>)
+ </h4> 
+<h4><i>True/False</i> <strong>photosAddTags(
+(str)
+$token, (str)
+$photoId, (str)
+$tags)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Add tags to a photo.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.addTags.html</p><p>Requires write authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str) $photoId</strong>: The id of the photo to add tags to.</li>
+			<li><strong>(str) $tags</strong>: The tags to add to the photo.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - depending on result of the call.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosDelete" id="methodphotosDelete"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosDelete</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a869">869</a></span>)
+ </h4> 
+<h4><i>True/False</i> <strong>photosDelete(
+(str)
+$token, (str)
+$photoId)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Delete a photo from flickr.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.delete.html</p><p>This method requires delete authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str) $photoId</strong>: The id of the photo to delete.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - depending on result of the call.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosGetAllContexts" id="methodphotosGetAllContexts"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosGetAllContexts</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a892">892</a></span>)
+ </h4> 
+<h4><i>All</i> <strong>photosGetAllContexts(
+(str)
+$photoId)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns all visible sets and pools the photo belongs to.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.getAllContexts.html</p><p>Does not require authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $photoId</strong>: The photo to return information for.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - visible sets and pools the photo belongs to.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosGetContactsPhotos" id="methodphotosGetContactsPhotos"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosGetContactsPhotos</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a918">918</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>photosGetContactsPhotos(
+(str)
+$token, [(int,
+$count = NULL], [(int,
+$justFriends = NULL], [(?,
+$singlePhoto = NULL], [(int,
+$includeSelf = NULL], [(str,
+$extras = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Fetch a list of recent photos from the calling users' contacts.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.getContactsPhotos.html</p><p>Requires read authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(int, $count</strong>: optional) Number of photos to return. Defaults to 10, maximum 50. This is only used if single_photo is not passed.</li>
+			<li><strong>(int, $justFriends</strong>: optional) Set as 1 to only show photos from friends and family (excluding regular contacts).</li>
+			<li><strong>(?, $singlePhoto</strong>: optional) Only fetch one photo (the latest) per contact, instead of all photos in chronological order.</li>
+			<li><strong>(int, $includeSelf</strong>: optional) Set to 1 to include photos from the calling user.</li>
+			<li><strong>(str, $extras</strong>: optional) A comma-delimited list of extra information to fetch for each returned record. Currently supported fields are: license, date_upload, date_taken, owner_name, icon_server, original_format, last_update.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of recent photos from the calling users' contacts.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosGetContactsPublicPhotos" id="methodphotosGetContactsPublicPhotos"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosGetContactsPublicPhotos</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a944">944</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>photosGetContactsPublicPhotos(
+(str)
+$userId, [(int,
+$count = NULL], [(int,
+$justFriends = NULL], [(?,
+$singlePhoto = NULL], [(int,
+$includeSelf = NULL], [(str,
+$extras = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Fetch a list of recent public photos from a users' contacts.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.getContactsPublicPhotos.html</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $userId</strong>: The NSID of the user to fetch photos for.</li>
+			<li><strong>(int, $count</strong>: optional) Number of photos to return. Defaults to 10, maximum 50. This is only used if single_photo is not passed.</li>
+			<li><strong>(int, $justFriends</strong>: optional) Set as 1 to only show photos from friends and family (excluding regular contacts).</li>
+			<li><strong>(?, $singlePhoto</strong>: optional) Only fetch one photo (the latest) per contact, instead of all photos in chronological order.</li>
+			<li><strong>(int, $includeSelf</strong>: optional) Set to 1 to include photos from the calling user.</li>
+			<li><strong>(str, $extras</strong>: optional) A comma-delimited list of extra information to fetch for each returned record. Currently supported fields are: license, date_upload, date_taken, owner_name, icon_server, original_format, last_update.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of recent public photos from a users' contacts.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosGetContext" id="methodphotosGetContext"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosGetContext</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a965">965</a></span>)
+ </h4> 
+<h4><i>Next</i> <strong>photosGetContext(
+(str)
+$photoId)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns next and previous photos for a photo in a photostream.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.getContext.html</p><p>Does not require authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $photoId</strong>: The id of the photo to fetch the context for.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - and previous photos for a photo in a photostream.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosGetCounts" id="methodphotosGetCounts"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosGetCounts</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a988">988</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>photosGetCounts(
+(str)
+$token, [(str,
+$dates = NULL], [(str,
+$takenDates = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Gets a list of photo counts for the given date ranges for the calling user.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.getCounts.html</p><p>Requires read authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str, $dates</strong>: optional) A comma delimited list of unix timestamps, denoting the periods to return counts for. They should be specified smallest first. You must specify either this or takenDates.</li>
+			<li><strong>(str, $takenDates</strong>: optional) A comma delimited list of mysql datetimes, denoting the periods to return counts for. They should be specified smallest first. You must specify either this or dates.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of photo counts for the given date ranges for the calling user.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosGetExif" id="methodphotosGetExif"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosGetExif</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a1012">1012</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>photosGetExif(
+(str)
+$photoId, [(str,
+$secret = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Retrieves a list of EXIF/TIFF/GPS tags for a given photo.</h5>
+<div class="desc"><p>The calling user must have permission to view the photo.</p><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.getExif.html</p><p>Does not require authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $photoId</strong>: The id of the photo to fetch information for.</li>
+			<li><strong>(str, $secret</strong>: optional) The secret for the photo. If the correct secret is passed then permissions checking is skipped. This enables the 'sharing' of individual photos by passing around the id and secret.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of EXIF/TIFF/GPS tags for a given photo.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosGetFavorites" id="methodphotosGetFavorites"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosGetFavorites</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a1035">1035</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>photosGetFavorites(
+(str)
+$photoId, [(int,
+$page = NULL], [(int,
+$perPage = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns the list of people who have favorited a given photo.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.getFavorites.html</p><p>Does not require authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $photoId</strong>: The ID of the photo to fetch the favoriters list for.</li>
+			<li><strong>(int, $page</strong>: optional) The page of results to return. If this argument is omitted, it defaults to 1.</li>
+			<li><strong>(int, $perPage</strong>: optional) Number of usres to return per page. If this argument is omitted, it defaults to 10. The maximum allowed value is 50.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of people who have favorited a given photo.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosGetInfo" id="methodphotosGetInfo"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosGetInfo</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a1056">1056</a></span>)
+ </h4> 
+<h4><i>Information</i> <strong>photosGetInfo(
+(str)
+$photoId, [(str,
+$secret = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Get information about a photo.</h5>
+<div class="desc"><p>The calling user must have permission to view the photo.</p><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.getInfo.html</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $photoId</strong>: The id of the photo to get information for.</li>
+			<li><strong>(str, $secret</strong>: optional) The secret for the photo. If the correct secret is passed then permissions checking is skipped. This enables the 'sharing' of individual photos by passing around the id and secret.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - about a photo.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosGetNotInSet" id="methodphotosGetNotInSet"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosGetNotInSet</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a1085">1085</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>photosGetNotInSet(
+(str)
+$token, [(str,
+$minUploadDate = NULL], [(str,
+$maxUploadDate = NULL], [(str,
+$minTakenDate = NULL], [(str,
+$maxTakenDate = NULL], [(int,
+$privacyFilter = NULL], [(str,
+$extras = NULL], [(int,
+$perPage = NULL], [(int,
+$page = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a list of your photos that are not part of any sets.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.getNotInSet.html</p><p>Requires read authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str, $minUploadDate</strong>: optional) Minimum upload date. Photos with an upload date greater than or equal to this value will be returned. The date should be in the form of a unix timestamp.</li>
+			<li><strong>(str, $maxUploadDate</strong>: optional) Maximum upload date. Photos with an upload date less than or equal to this value will be returned. The date should be in the form of a unix timestamp.</li>
+			<li><strong>(str, $minTakenDate</strong>: optional) Minimum taken date. Photos with an taken date greater than or equal to this value will be returned. The date should be in the form of a mysql datetime.</li>
+			<li><strong>(str, $maxTakenDate</strong>: optional) Maximum taken date. Photos with an taken date less than or equal to this value will be returned. The date should be in the form of a mysql datetime.</li>
+			<li><strong>(int, $privacyFilter</strong>: optional) Return photos only matching a certain privacy level. Valid values are: 1 public photos,    2 private photos visible to friends, 3 private photos visible to family, 4 private photos visible to friends &amp; family, 5 completely private photos</li>
+			<li><strong>(str, $extras</strong>: optional) A comma-delimited list of extra information to fetch for each returned record. Currently supported fields are: license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags.</li>
+			<li><strong>(int, $perPage</strong>: optional) Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500.</li>
+			<li><strong>(int, $page</strong>: optional) The page of results to return. If this argument is omitted, it defaults to 1.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of your photos that are not part of any sets.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosGetPerms" id="methodphotosGetPerms"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosGetPerms</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a1108">1108</a></span>)
+ </h4> 
+<h4><i>Permissions</i> <strong>photosGetPerms(
+(str)
+$token, (str)
+$photoId)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Get permissions for a photo.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.getPerms.html</p><p>Requires read authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str) $photoId</strong>: The id of the photo to get permissions for.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - for a photo.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosGetRecent" id="methodphotosGetRecent"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosGetRecent</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a1133">1133</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>photosGetRecent(
+[(str,
+$extras = NULL], [(int,
+$perPage = NULL], [(int,
+$page = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a list of the latest public photos uploaded to flickr.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.getRecent.html</p><p>Does not require authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str, $extras</strong>: optional) comma-delimited list of extra information to fetch for each returned record. Currently supported fields are: license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags.</li>
+			<li><strong>(int, $perPage</strong>: optional) Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500.</li>
+			<li><strong>(int, $page</strong>: optional) The page of results to return. If this argument is omitted, it defaults to 1.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of the latest public photos uploaded to flickr.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosGetSizes" id="methodphotosGetSizes"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosGetSizes</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a1155">1155</a></span>)
+ </h4> 
+<h4><i>The</i> <strong>photosGetSizes(
+(str)
+$photoId)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns the available sizes for a photo.</h5>
+<div class="desc"><p>The calling user must have permission to view the photo.</p><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.getSizes.html</p><p>Does not require authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $photoId</strong>: The id of the photo to fetch size information for.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - available sizes for a photo.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosGetUntagged" id="methodphotosGetUntagged"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosGetUntagged</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a1184">1184</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>photosGetUntagged(
+(str)
+$token, [(str,
+$minUploadDate = NULL], [(str,
+$maxUploadDate = NULL], [(str,
+$minTakenDate = NULL], [(str,
+$maxTakenDate = NULL], [(int,
+$privacyFilter = NULL], [(str,
+$extras = NULL], [(int,
+$perPage = NULL], [(int,
+$page = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a list of your photos with no tags.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.getUntagged.html</p><p>Requires read authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str, $minUploadDate</strong>: optional) Minimum upload date. Photos with an upload date greater than or equal to this value will be returned. The date should be in the form of a unix timestamp.</li>
+			<li><strong>(str, $maxUploadDate</strong>: optional) Maximum upload date. Photos with an upload date less than or equal to this value will be returned. The date should be in the form of a unix timestamp.</li>
+			<li><strong>(str, $minTakenDate</strong>: optional) Minimum taken date. Photos with an taken date greater than or equal to this value will be returned. The date should be in the form of a mysql datetime.</li>
+			<li><strong>(str, $maxTakenDate</strong>: optional) Maximum taken date. Photos with an taken date less than or equal to this value will be returned. The date should be in the form of a mysql datetime.</li>
+			<li><strong>(int, $privacyFilter</strong>: optional) Return photos only matching a certain privacy level. Valid values are: 1 public photos, 2 private photos visible to friends,    3 private photos visible to family, 4 private photos visible to friends &amp; family,    5 completely private photos</li>
+			<li><strong>(str, $extras</strong>: optional) A comma-delimited list of extra information to fetch for each returned record. Currently supported fields are: license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags.</li>
+			<li><strong>(int, $perPage</strong>: optional) Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500.</li>
+			<li><strong>(int, $page</strong>: optional) The page of results to return. If this argument is omitted, it defaults to 1.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of your photos with no tags.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosGetWithGeoData" id="methodphotosGetWithGeoData"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosGetWithGeoData</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a1214">1214</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>photosGetWithGeoData(
+(str)
+$token, [(str,
+$minUploadDate = NULL], [(str,
+$maxUploadDate = NULL], [(str,
+$minTakenDate = NULL], [(str,
+$maxTakenDate = NULL], [(int,
+$privacyFilter = NULL], [(str,
+$sort = NULL], [(int,
+$extras = NULL], [(int,
+$perPage = NULL], [
+$page = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a list of your geo-tagged photos.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.getWithGeoData.html</p><p>Requires read authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str, $minUploadDate</strong>: optional) Minimum upload date. Photos with an upload date greater than or equal to this value will be returned. The date should be in the form of a unix timestamp.</li>
+			<li><strong>(str, $maxUploadDate</strong>: optional) Maximum upload date. Photos with an upload date less than or equal to this value will be returned. The date should be in the form of a unix timestamp.</li>
+			<li><strong>(str, $minTakenDate</strong>: optional) Minimum taken date. Photos with an taken date greater than or equal to this value will be returned. The date should be in the form of a mysql datetime.</li>
+			<li><strong>(str, $maxTakenDate</strong>: optional) Maximum taken date. Photos with an taken date less than or equal to this value will be returned. The date should be in the form of a mysql datetime.</li>
+			<li><strong>(int, $privacyFilter</strong>: optional) Return photos only matching a certain privacy level. Valid values are: 1 public photos, 2 private photos visible to friends,    3 private photos visible to family, 4 private photos visible to friends &amp; family,    5 completely private photos</li>
+			<li><strong>(str, $sort</strong>: optional) A comma-delimited list of extra information to fetch for each returned record. Currently supported fields are: license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags.</li>
+			<li><strong>(int, $extras</strong>: optional) Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500.</li>
+			<li><strong>(int, $perPage</strong>: optional) The page of results to return. If this argument is omitted, it defaults to 1.</li>
+			<li><strong> $page</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of your geo-tagged photos.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosGetWithoutGeoData" id="methodphotosGetWithoutGeoData"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosGetWithoutGeoData</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a1249">1249</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>photosGetWithoutGeoData(
+(str)
+$token, [(str,
+$minUploadDate = NULL], [(str,
+$maxUploadDate = NULL], [(str,
+$minTakenDate = NULL], [(str,
+$maxTakenDate = NULL], [(int,
+$privacyFilter = NULL], [(str,
+$sort = NULL], [(int,
+$extras = NULL], [(int,
+$perPage = NULL], [
+$page = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a list of your photos which haven't been geo-tagged.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.getWithoutGeoData.html</p><p>Requires read authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str, $minUploadDate</strong>: optional) Minimum upload date. Photos with an upload date greater than or equal to this value will be returned. The date should be in the form of a unix timestamp.</li>
+			<li><strong>(str, $maxUploadDate</strong>: optional) Maximum upload date. Photos with an upload date less than or equal to this value will be returned. The date should be in the form of a unix timestamp.</li>
+			<li><strong>(str, $minTakenDate</strong>: optional) Minimum taken date. Photos with an taken date greater than or equal to this value will be returned. The date should be in the form of a mysql datetime.</li>
+			<li><strong>(str, $maxTakenDate</strong>: optional) Maximum taken date. Photos with an taken date less than or equal to this value will be returned. The date should be in the form of a mysql datetime.</li>
+			<li><strong>(int, $privacyFilter</strong>: optional) Return photos only matching a certain privacy level. Valid values are: 1 public photos, 2 private photos visible to friends,    3 private photos visible to family, 4 private photos visible to friends &amp; family,    5 completely private photos</li>
+			<li><strong>(str, $sort</strong>: optional) A comma-delimited list of extra information to fetch for each returned record. Currently supported fields are: license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags.</li>
+			<li><strong>(int, $extras</strong>: optional) Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500.</li>
+			<li><strong>(int, $perPage</strong>: optional) The page of results to return. If this argument is omitted, it defaults to 1.</li>
+			<li><strong> $page</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of your photos which haven't been geo-tagged.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosRecentlyUpdated" id="methodphotosRecentlyUpdated"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosRecentlyUpdated</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a1284">1284</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>photosRecentlyUpdated(
+(str)
+$token, [(str)
+$minDate = NULL], [(str,
+$extras = NULL], [(int,
+$perPage = NULL], [(int,
+$page = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return a list of your photos that have been recently created</h5>
+<div class="desc"><p>or which have been recently modified. Recently modified may mean  that the photo's metadata (title, description, tags) may have  been changed or a comment has been added (or just modified somehow :-)</p><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.recentlyUpdated.html</p><p>Requires read authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str) $minDate</strong>: A Unix timestamp indicating the date from which modifications should be compared.</li>
+			<li><strong>(str, $extras</strong>: optional) A comma-delimited list of extra information to fetch for each returned record. Currently supported fields are: license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags.</li>
+			<li><strong>(int, $perPage</strong>: optional) Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500.</li>
+			<li><strong>(int, $page</strong>: optional) The page of results to return. If this argument is omitted, it defaults to 1.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of your photos that have been recently created  or which have been recently modified.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosRemoveTag" id="methodphotosRemoveTag"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosRemoveTag</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a1308">1308</a></span>)
+ </h4> 
+<h4><i>True</i> <strong>photosRemoveTag(
+(str)
+$token, (str)
+$tagId)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Remove a tag from a photo.</h5>
+<div class="desc"><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.removeTag.html</p><p>Requires write authentication.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str) $token</strong>: The auth token that was returned by authGetToken().</li>
+			<li><strong>(str) $tagId</strong>: The tag to remove from the photo. This parameter should contain a tag id, as returned by photosGetInfo().</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - on success, or error object.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodphotosSearch" id="methodphotosSearch"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photosSearch</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a1356">1356</a></span>)
+ </h4> 
+<h4><i>List</i> <strong>photosSearch(
+[(str,
+$token = NULL], [(str,
+$userId = NULL], [(str,
+$tags = NULL], [(str,
+$tagMode = NULL], [(str,
+$text = NULL], [(str,
+$minUploadDate = NULL], [(str,
+$maxUploadDate = NULL], [(str,
+$minTakenDate = NULL], [(str,
+$maxTakenDate = NULL], [(str,
+$license = NULL], [(str,
+$sort = NULL], [(int,
+$privacyFilter = NULL], [(str,
+$bbox = NULL], [(int,
+$accuracy = NULL], [(int,
+$safeSearch = NULL], [(int,
+$contentType = NULL], [(str,
+$machineTags = NULL], [(str,
+$machineTagMode = NULL], [(str,
+$groupId = NULL], [(str,
+$extras = NULL], [(int,
+$perPage = NULL], [(int,
+$page = NULL])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return a list of photos matching some criteria. Only photos visible  to the calling user will be returned. To return private or semi-private   photos, the caller must be authenticated with 'read' permissions, and  have permission to view the photos.</h5>
+<div class="desc"><p>Autentication is optional. Unauthenticated calls will only return  public photos.</p><p>Official Flickr API documentation:  http://www.flickr.com/services/api/flickr.photos.search.html</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>(str, $token</strong>: optional) The auth token that was returned by authGetToken().</li>
+			<li><strong>(str, $userId</strong>: optional) The NSID of the user who's photo to search. If this parameter isn't passed then everybody's public photos will be searched. A value of &quot;me&quot; will search against the calling user's photos for authenticated calls.</li>
+			<li><strong>(str, $tags</strong>: optional) A comma-delimited list of tags. Photos with one or more of the tags listed will be returned.</li>
+			<li><strong>(str, $tagMode</strong>: optional) Either 'any' for an OR combination of tags, or 'all' for an AND combination. Defaults to 'any' if not specified.</li>
+			<li><strong>(str, $text</strong>: optional) A free text search. Photos who's title, description or tags contain the text will be returned.</li>
+			<li><strong>(str, $minUploadDate</strong>: optional) Minimum upload date. Photos with an upload date greater than or equal to this value will be returned. The date should be in the form of a unix timestamp.</li>
+			<li><strong>(str, $maxUploadDate</strong>: optional) Maximum upload date. Photos with an upload date less than or equal to this value will be returned. The date should be in the form of a unix timestamp.</li>
+			<li><strong>(str, $minTakenDate</strong>: optional) Minimum taken date. Photos with an taken date greater than or equal to this value will be returned. The date should be in the form of a mysql datetime.</li>
+			<li><strong>(str, $maxTakenDate</strong>: optional) Maximum taken date. Photos with an taken date less than or equal to this value will be returned. The date should be in the form of a mysql datetime.</li>
+			<li><strong>(str, $license</strong>: optional) The license id for photos (for possible values see the flickr.photos.licenses.getInfo method). Multiple licenses may be comma-separated.</li>
+			<li><strong>(str, $sort</strong>: optional) The order in which to sort returned photos. Deafults to date-posted-desc. The possible values are: date-posted-asc, date-posted-desc, date-taken-asc, date-taken-desc, interestingness-desc, interestingness-asc, and relevance.</li>
+			<li><strong>(int, $privacyFilter</strong>: optional) Return photos only matching a certain privacy level. This only applies when making an authenticated call to view photos you own. Valid values are: 1 public photos, 2 private photos visible to friends, 3 private photos visible to family, 4 private photos visible to friends &amp; family, 5 completely private photos</li>
+			<li><strong>(str, $bbox</strong>: optional) A comma-delimited list of 4 values defining the Bounding Box of the area that will be searched. The 4 values represent the bottom-left corner of the box and the top-right corner, minimum_longitude, minimum_latitude, maximum_longitude, maximum_latitude. Longitude has a range of -180 to 180 , latitude of -90 to 90. Defaults to -180, -90, 180, 90 if not specified. Unlike standard photo queries, geo (or bounding box) queries will only return 250 results per page. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against &quot;parameterless searches&quot; for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters — If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).</li>
+			<li><strong>(int, $accuracy</strong>: optional) Recorded accuracy level of the location information. Current range is 1-16:    World level is 1, Country is ~3, Region is ~6, City is ~11, Street is ~16, Defaults to maximum value if not specified.</li>
+			<li><strong>(int, $safeSearch</strong>: optional) Safe search setting: 1 for safe. 2 for moderate. 3 for restricted.    (Please note: Un-authed calls can only see Safe content.)</li>
+			<li><strong>(int, $contentType</strong>: optional) Content Type setting:    1 for photos only. 2 for screenshots only. 3 for 'other' only. 4 for photos and screenshots. 5 for screenshots and 'other'. 6 for photos and 'other'. 7 for photos, screenshots, and 'other' (all).</li>
+			<li><strong>(str, $machineTags</strong>: optional) Aside from passing in a fully formed machine tag, there is a special syntax for searching on specific properties: Find photos using the 'dc' namespace : &quot;machine_tags&quot; =&gt; &quot;dc:&quot;. Find photos with a title in the 'dc' namespace : &quot;machine_tags&quot; =&gt; &quot;dc:title=&quot;.    Find photos titled &quot;mr. camera&quot; in the 'dc' namespace : &quot;machine_tags&quot; =&gt; &quot;dc:title=\&quot;mr. camera\&quot;. Find photos whose value is &quot;mr. camera&quot; : &quot;machine_tags&quot; =&gt; &quot;*:*=\&quot;mr. camera\&quot;&quot;.    Find photos that have a title, in any namespace : &quot;machine_tags&quot; =&gt; &quot;*:title=&quot;. Find photos that have a title, in any namespace, whose value is &quot;mr. camera&quot; : &quot;machine_tags&quot; =&gt; &quot;*:title=\&quot;mr. camera\&quot;&quot;. Find photos, in the 'dc' namespace whose value is &quot;mr. camera&quot; : &quot;machine_tags&quot; =&gt; &quot;dc:*=\&quot;mr. camera\&quot;&quot;. Multiple machine tags may be queried by passing a comma-separated list. The number of machine tags you can pass in a single query depends on the tag mode (AND or OR) that you are querying with. &quot;AND&quot; queries are limited to (16) machine tags. &quot;OR&quot; queries are limited to (8).</li>
+			<li><strong>(str, $machineTagMode</strong>: required if searching for machine tags)    Either 'any' for an OR combination of tags, or 'all' for an AND combination. Defaults to 'any' if not specified.</li>
+			<li><strong>(str, $groupId</strong>: optional) The id of a group who's pool to search. If specified, only matching photos posted to the group's pool will be returned.</li>
+			<li><strong>(str, $extras</strong>: optional) A comma-delimited list of extra information to fetch for each returned record. Currently supported fields are: license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags.</li>
+			<li><strong>(int, $perPage</strong>: optional) Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500.</li>
+			<li><strong>(int, $page</strong>: optional) The page of results to return. If this argument is omitted, it defaults to 1.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - of photos matching the criteria.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="method_getResult" id="method_getResult"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method _getResult</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__servicesFlickr.php.html#a1377">1377</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>_getResult(
+
+$result)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $result</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Fri, 06 Jul 2007 19:54:50 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.1</a>
+	</div>
+</body>
+</html>

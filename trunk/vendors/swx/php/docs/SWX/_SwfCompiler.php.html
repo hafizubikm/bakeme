@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs for page SwfCompiler.php</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><h2>File: /SwfCompiler.php</h2>
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>filesource:</strong> - <a href="../__filesource/fsource_SWX__SwfCompiler.php.html">Source Code for this file</a></li>
+	</ul>
+<!-- =========== Used Classes =========== -->
+<A NAME='classes_summary'><!-- --></A>
+<h3>Classes defined in this file</h3>
+
+<TABLE CELLPADDING='3' CELLSPACING='0' WIDTH='100%' CLASS="border">
+	<THEAD>
+		<TR><TD STYLE="width:20%"><h4>CLASS NAME</h4></TD><TD STYLE="width: 80%"><h4>DESCRIPTION</h4></TD></TR>
+	</THEAD>
+	<TBODY>
+				<TR BGCOLOR='white' CLASS='TableRowColor'>
+			<TD><a href="../SWX/SwfCompiler.html">SwfCompiler</a></TD>
+			<TD></TD>
+		</TR>
+			</TBODY>
+</TABLE>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+<!-- ============ Includes DETAIL =========== -->
+
+<h2 class="tab">Include/Require Statements</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+
+
+<a name="_lib/str_split_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">'lib/str_split.php'</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a16">16</a></span>)
+ </h4> 
+<h4>require_once : 'lib/str_split.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>SWF Compiler class for SWX.</h5>
+<div class="desc"><p>Collection of methods that compile a SWX SWF.  Released under the GNU GPL license.</p><p>Author: Aral Balkan  Copyright (c) 2007 Aral Balkan.  http://aralbalkan.com</p><p>http://swxformat.org</p></div>
+<ul>
+	</ul>
+</div>
+</div>
+<div class="tab-page" id="tabPage2">
+<!-- ============ GLOBAL DETAIL =========== -->
+
+<h2 class="tab">Global Variables</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script>
+
+</div>
+<div class="tab-page" id="tabPage3">
+<!-- ============ CONSTANT DETAIL =========== -->
+
+<A NAME='constant_detail'></A>
+<h2 class="tab">Constants</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage3" ) );</script>
+
+<a name="defineACTION_DO_ACTION"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">ACTION_DO_ACTION</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a756">756</a></span>)
+ </h4> 
+<h4>ACTION_DO_ACTION : '3F03'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineACTION_END_SWF"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">ACTION_END_SWF</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a754">754</a></span>)
+ </h4> 
+<h4>ACTION_END_SWF : '0000'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineACTION_INIT_ARRAY"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">ACTION_INIT_ARRAY</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a757">757</a></span>)
+ </h4> 
+<h4>ACTION_INIT_ARRAY : '42'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineACTION_INIT_OBJECT"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">ACTION_INIT_OBJECT</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a758">758</a></span>)
+ </h4> 
+<h4>ACTION_INIT_OBJECT : '43'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineACTION_PUSH"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">ACTION_PUSH</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a752">752</a></span>)
+ </h4> 
+<h4>ACTION_PUSH : '96LLLL'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineACTION_SET_VARIABLE"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">ACTION_SET_VARIABLE</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a755">755</a></span>)
+ </h4> 
+<h4>ACTION_SET_VARIABLE : '1D'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineACTION_SHOW_FRAME"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">ACTION_SHOW_FRAME</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a753">753</a></span>)
+ </h4> 
+<h4>ACTION_SHOW_FRAME : '4000'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineALLOW_DOMAIN"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">ALLOW_DOMAIN</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a775">775</a></span>)
+ </h4> 
+<h4>ALLOW_DOMAIN : '960900005F706172656E74001C960600005F75726C004E960D0007010000000053797374656D001C960A00007365637572697479004E960D0000616C6C6F77446F6D61696E005217'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineARRAY_TYPE_ASSOCIATIVE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">ARRAY_TYPE_ASSOCIATIVE</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a772">772</a></span>)
+ </h4> 
+<h4>ARRAY_TYPE_ASSOCIATIVE : 'associative'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineARRAY_TYPE_REGULAR"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">ARRAY_TYPE_REGULAR</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a771">771</a></span>)
+ </h4> 
+<h4>ARRAY_TYPE_REGULAR : 'regular'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineBIG_ENDIAN"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">BIG_ENDIAN</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a20">20</a></span>)
+ </h4> 
+<h4>BIG_ENDIAN : 'big-endian'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineBI_ENDIAN"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">BI_ENDIAN</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a21">21</a></span>)
+ </h4> 
+<h4>BI_ENDIAN : 'bi-endian'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineCOMPRESSED_SWF"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">COMPRESSED_SWF</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a748">748</a></span>)
+ </h4> 
+<h4>COMPRESSED_SWF : '43'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineDATA_TYPE_BOOLEAN"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DATA_TYPE_BOOLEAN</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a763">763</a></span>)
+ </h4> 
+<h4>DATA_TYPE_BOOLEAN : '05'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineDATA_TYPE_DOUBLE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DATA_TYPE_DOUBLE</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a764">764</a></span>)
+ </h4> 
+<h4>DATA_TYPE_DOUBLE : '06'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineDATA_TYPE_INTEGER"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DATA_TYPE_INTEGER</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a765">765</a></span>)
+ </h4> 
+<h4>DATA_TYPE_INTEGER : '07'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineDATA_TYPE_NULL"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DATA_TYPE_NULL</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a762">762</a></span>)
+ </h4> 
+<h4>DATA_TYPE_NULL : '02'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineDATA_TYPE_STRING"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DATA_TYPE_STRING</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a761">761</a></span>)
+ </h4> 
+<h4>DATA_TYPE_STRING : '00'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineDEBUG_END"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DEBUG_END</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a783">783</a></span>)
+ </h4> 
+<h4>DEBUG_END : '960D0008010600000000000000000802403C9609000803070100000008011C9602000804521796020008001C960500070100000042960B0008050803070300000008011C96020008065217'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineDEBUG_START"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DEBUG_START</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a781">781</a></span>)
+ </h4> 
+<h4>DEBUG_START : '883C000700726573756C74006C63004C6F63616C436F6E6E656374696F6E005F737778446562756767657200636F6E6E6563740064656275670073656E6400'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineHEADER"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">HEADER</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a749">749</a></span>)
+ </h4> 
+<h4>HEADER : '575306LLLLLLLL300A00A0000101004302FFFFFF'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineLITTLE_ENDIAN"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">LITTLE_ENDIAN</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a19">19</a></span>)
+ </h4> 
+<h4>LITTLE_ENDIAN : 'little-endian'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineNULL_TERMINATOR"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">NULL_TERMINATOR</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a768">768</a></span>)
+ </h4> 
+<h4>NULL_TERMINATOR : '00'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineSYSTEM_ALLOW_DOMAIN"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">SYSTEM_ALLOW_DOMAIN</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a777">777</a></span>)
+ </h4> 
+<h4>SYSTEM_ALLOW_DOMAIN : '07010000000053797374656D001C960A00007365637572697479004E960D0000616C6C6F77446F6D61696E005217'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineUNCOMPRESSED_SWF"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">UNCOMPRESSED_SWF</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a747">747</a></span>)
+ </h4> 
+<h4>UNCOMPRESSED_SWF : '46'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+</div>
+<div class="tab-page" id="tabPage4">
+<!-- ============ FUNCTION DETAIL =========== -->
+
+<h2 class="tab">Functions</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage4" ) );</script>
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Fri, 06 Jul 2007 19:54:51 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.1</a>
+	</div>
+</body>
+</html>
