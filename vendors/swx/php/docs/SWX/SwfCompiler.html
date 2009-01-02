@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class SwfCompiler</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class SwfCompiler
+</h2> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a23">23</a></span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_SwfCompiler.php.html">/SwfCompiler.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$endian" title="details" class="property"><strong>$endian</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$stack" title="details" class="property"><strong>$stack</strong></a>
+</div>
+<hr />
+<a name="var$endian" id="var$endian"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$endian =  NULL</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a26">26</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$stack" id="var$stack"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$stack =  ''</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a25">25</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">SwfCompiler</span>
+        <a href="#methodSwfCompiler" title="details" class="method-name">SwfCompiler</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodarrayToBytecode" title="details" class="method-name">arrayToBytecode</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$arr</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodbooleanToBytecode" title="details" class="method-name">booleanToBytecode</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$bool</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methoddataToBytecode" title="details" class="method-name">dataToBytecode</a>
+        (<span class="var-type">any</span>&nbsp;<span class="var-name">$data</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoddebug" title="details" class="method-name">debug</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$str</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methoddoubleToBytecode" title="details" class="method-name">doubleToBytecode</a>
+        (<span class="var-type">double</span>&nbsp;<span class="var-name">$f</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetAllowDomainBytecode" title="details" class="method-name">getAllowDomainBytecode</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$url</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetIntAsHex" title="details" class="method-name">getIntAsHex</a>
+        (<span class="var-type">integer</span>&nbsp;<span class="var-name">$int</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$numBytes</span> = <span class="var-default">1</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetStringLengthInBytesHex" title="details" class="method-name">getStringLengthInBytesHex</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$strInHex</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$numBytes</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetVarDump" title="details" class="method-name">getVarDump</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$mixed</span> = <span class="var-default">null</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodhexstr" title="details" class="method-name">hexstr</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$hexstr</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodintegerToBytecode" title="details" class="method-name">integerToBytecode</a>
+        (<span class="var-type">integer</span>&nbsp;<span class="var-name">$int</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">1</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodmakeLittleEndian" title="details" class="method-name">makeLittleEndian</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$str</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodmicrotime_float" title="details" class="method-name">microtime_float</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodobjectToArray" title="details" class="method-name">objectToArray</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$data</span> = <span class="var-default">''</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodprettyHex" title="details" class="method-name">prettyHex</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$h</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodstrhex" title="details" class="method-name">strhex</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$string</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodstringToBytecode" title="details" class="method-name">stringToBytecode</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodwriteSwf" title="details" class="method-name">writeSwf</a>
+        (<span class="var-type">Data</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$debug</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$compressionLevel</span> = <span class="var-default">4</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$url</span> = <span class="var-default">''</span>])
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodSwfCompiler" id="methodSwfCompiler"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor SwfCompiler</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a28">28</a></span>)
+ </h4> 
+<h4><i>SwfCompiler</i> <strong>SwfCompiler(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodarrayToBytecode" id="methodarrayToBytecode"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method arrayToBytecode</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a159">159</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>arrayToBytecode(
+
+$arr)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Converts the passed array to SWF bytecode.</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $arr</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - SWF bytecode.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodbooleanToBytecode" id="methodbooleanToBytecode"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method booleanToBytecode</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a423">423</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>booleanToBytecode(
+
+$bool)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Converts the passed boolean to SWF bytecode.</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $bool</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Boolean as SWF bytecode.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methoddataToBytecode" id="methoddataToBytecode"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method dataToBytecode</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a102">102</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>dataToBytecode(
+any
+$data)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Parses the given data structure (any type) and  returns SWF bytecode.</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>any $data</strong>: A PHP data structure</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Swf bytecode representation of the data structure.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methoddebug" id="methoddebug"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method debug</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a667">667</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>debug(
+
+$str)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $str</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methoddoubleToBytecode" id="methoddoubleToBytecode"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method doubleToBytecode</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a390">390</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>doubleToBytecode(
+double
+$f)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Converts a double to its IEEE 754 representation (little-endian)</h5>
+<div class="desc"><p>Modified from Chung Leong's function.  (http://www.thescripts.com/forum/thread9237.html.)</p><p>TODO: Works on 5.1.2 for me (OS X 10.4.9, Intel Core Duo, MAMP 1.2.1) but  waiting for report back from Alex Skinner for whom it is not working. Weird!</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>double $f</strong>: A PHP double.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Little-endian Flash double in hex (variation on IEEE 754).</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodgetAllowDomainBytecode" id="methodgetAllowDomainBytecode"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getAllowDomainBytecode</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a544">544</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>getAllowDomainBytecode(
+
+$url)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $url</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetIntAsHex" id="methodgetIntAsHex"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getIntAsHex</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a596">596</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getIntAsHex(
+integer
+$int, [integer
+$numBytes = 1])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns the hexadecimal representation of the passed integer,  padded to $numBytes bytes in little-endian.</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>integer $int</strong>: Number to convert to hex byte representation.</li>
+			<li><strong>integer $numBytes</strong>: Number of bytes to pad to.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Integer as hex string.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodgetStringLengthInBytesHex" id="methodgetStringLengthInBytesHex"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getStringLengthInBytesHex</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a576">576</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>getStringLengthInBytesHex(
+
+$strInHex, 
+$numBytes)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Helper methods. (For data type conversions, formatting, etc.)</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $strInHex</strong>: </li>
+			<li><strong> $numBytes</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetVarDump" id="methodgetVarDump"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getVarDump</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a62">62</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>getVarDump(
+[
+$mixed = null])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $mixed</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodhexstr" id="methodhexstr"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method hexstr</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a688">688</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>hexstr(
+
+$hexstr)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Converts a string of hexadecimal values to a string of ASCII characters.</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $hexstr</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - String with ASCII characters</li>
+			<li><strong>link</strong> - <a href="http://www.pgregg.com/projects/php/code/hexstr.phps">http://www.pgregg.com/projects/php/code/hexstr.phps</a></li>
+			<li><strong>author</strong> - Paul Gregg &lt;<a href="mailto:pgregg@pgregg.com">pgregg@pgregg.com</a>&gt;</li>
+		</ul>
+</div>
+<a name="methodintegerToBytecode" id="methodintegerToBytecode"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method integerToBytecode</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a370">370</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>integerToBytecode(
+integer
+$int, integer
+1)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Converts the passed integer to bytecode, padding it to  $numBytes bytes in little-endian.</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>integer 1</strong>: Number of bytes to pad to.</li>
+			<li><strong>integer $int</strong>: Number to convert to hex byte representation.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Integer as hex string.</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodmakeLittleEndian" id="methodmakeLittleEndian"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method makeLittleEndian</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a609">609</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>makeLittleEndian(
+
+$str)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $str</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodmicrotime_float" id="methodmicrotime_float"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method microtime_float</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a733">733</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>microtime_float(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodobjectToArray" id="methodobjectToArray"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method objectToArray</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a77">77</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>objectToArray(
+[
+$data = ''])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Converts the passed object to arrays.</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $data</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodprettyHex" id="methodprettyHex"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method prettyHex</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a638">638</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>prettyHex(
+
+$h)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $h</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodstrhex" id="methodstrhex"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method strhex</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a704">704</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>strhex(
+
+$string)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Converts a string of ASCII characters to a string of hexadecimal byte values.</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $string</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - String with ASCII characters</li>
+			<li><strong>link</strong> - <a href="http://www.pgregg.com/projects/php/code/hexstr.phps">http://www.pgregg.com/projects/php/code/hexstr.phps</a></li>
+			<li><strong>author</strong> - Paul Gregg &lt;<a href="mailto:pgregg@pgregg.com">pgregg@pgregg.com</a>&gt;</li>
+			<li><strong>author</strong> - Aral Balkan (added PHP4 bug fix)</li>
+		</ul>
+</div>
+<a name="methodstringToBytecode" id="methodstringToBytecode"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method stringToBytecode</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a353">353</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>stringToBytecode(
+string
+$str)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Converts the passed string to hex and returns the correct SWF bytecode for it.</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $str</strong>: The string to convert to bytecode.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - SWF bytecode for the passed string</li>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<a name="methodwriteSwf" id="methodwriteSwf"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method writeSwf</strong> (line <span class="linenumber"><a href="../__filesource/fsource_SWX__SwfCompiler.php.html#a439">439</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>writeSwf(
+Data
+$data, [
+$debug = false], [
+$compressionLevel = 4], [
+$url = ''])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Wraps the SWF buffer in a doAction block, wraps that with  the SWF Header and the SWF footer (set variable, show frame, end SWF)  and writes out the SWF.</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>Data $data</strong>: to write out as a SWF.</li>
+			<li><strong> $debug</strong>: </li>
+			<li><strong> $compressionLevel</strong>: </li>
+			<li><strong> $url</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Aral Balkan</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Fri, 06 Jul 2007 19:54:52 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.1</a>
+	</div>
+</body>
+</html>

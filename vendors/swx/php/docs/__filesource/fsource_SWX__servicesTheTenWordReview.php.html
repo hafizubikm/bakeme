@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>File Source for TheTenWordReview.php</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><h1 align="center">Source for file TheTenWordReview.php</h1>
+<p>Documentation is available at <a href="../SWX/_services---TheTenWordReview.php.html">TheTenWordReview.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><strong>&lt;?php</strong></div></li>
+<li><div class="src-line"><a name="a2"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a3"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a4"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;SWX&nbsp;thetenwordreview.com&nbsp;API&nbsp;by&nbsp;Carin&nbsp;Campanario&nbsp;and&nbsp;Steve&nbsp;Webster.</font></div></li>
+<li><div class="src-line"><a name="a5"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a6"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;You&nbsp;can&nbsp;call&nbsp;this&nbsp;API&nbsp;using&nbsp;SWX,&nbsp;Amfphp,&nbsp;JSON&nbsp;and&nbsp;XML-RPC.</font></div></li>
+<li><div class="src-line"><a name="a7"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a8"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@author</font></strong><font color="#009999">&nbsp;Carin&nbsp;Campanario</font></div></li>
+<li><div class="src-line"><a name="a9"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@author</font></strong><font color="#009999">&nbsp;Steve&nbsp;Webster</font></div></li>
+<li><div class="src-line"><a name="a10"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@copyright</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;2007&nbsp;Aral&nbsp;Balkan.&nbsp;All&nbsp;Rights&nbsp;Reserved.</font></div></li>
+<li><div class="src-line"><a name="a11"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@link</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://thetenwordreview.com</font></div></li>
+<li><div class="src-line"><a name="a12"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@link</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://thetenwordreview.com/api</font></div></li>
+<li><div class="src-line"><a name="a13"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@link</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://ccampanario.com</font></div></li>
+<li><div class="src-line"><a name="a14"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@link</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://dynamicflash.com</font></div></li>
+<li><div class="src-line"><a name="a15"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@link</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;mailto://carin@tui.co.uk</font></div></li>
+<li><div class="src-line"><a name="a16"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@link</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;mailto://steve@dynamicflash.com</font></div></li>
+<li><div class="src-line"><a name="a17"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@link</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://swxformat.org</font></div></li>
+<li><div class="src-line"><a name="a18"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a19"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;***/</font></div></li>
+<li><div class="src-line"><a name="a20"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a21"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;Require&nbsp;base&nbsp;service&nbsp;class</font></div></li>
+<li><div class="src-line"><a name="a22"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">require_once</font><strong>(</strong><font color="#66cccc">&quot;../BaseService.php&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a23"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a24"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a25"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;SWX&nbsp;thetenwordreview.com&nbsp;API&nbsp;by&nbsp;Carin&nbsp;Campanario&nbsp;&amp;&nbsp;Steve&nbsp;Webster.&nbsp;You&nbsp;can&nbsp;call&nbsp;this&nbsp;API&nbsp;using&nbsp;SWX,&nbsp;Amfphp,&nbsp;JSON&nbsp;and&nbsp;XML-RPC.</font></div></li>
+<li><div class="src-line"><a name="a26"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;**/</font></div></li>
+<li><div class="src-line"><a name="a26"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a27"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">class&nbsp;</font><a href="../SWX/TheTenWordReview.html">TheTenWordReview</a>&nbsp;<font color="blue">extends&nbsp;</font>BaseService</div></li>
+<li><div class="src-line"><a name="a28"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a29"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a30"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a31"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Returns&nbsp;the&nbsp;requested&nbsp;number&nbsp;of&nbsp;photos&nbsp;for&nbsp;the&nbsp;specified&nbsp;user.</font></div></li>
+<li><div class="src-line"><a name="a32"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a33"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;</font><em>API&nbsp;</em><font color="#009999">key&nbsp;for&nbsp;thetenwordreview.com.&nbsp;Required.</font></div></li>
+<li><div class="src-line"><a name="a34"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;</font><em>The&nbsp;</em><font color="#009999">username&nbsp;of&nbsp;the&nbsp;user&nbsp;you&nbsp;want&nbsp;reviews&nbsp;by.&nbsp;Optional&nbsp;-&nbsp;defaults&nbsp;to&nbsp;all&nbsp;users.</font></div></li>
+<li><div class="src-line"><a name="a35"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;</font><em>The&nbsp;</em><font color="#009999">category&nbsp;that&nbsp;you&nbsp;want&nbsp;reviews&nbsp;for&nbsp;Optional&nbsp;-&nbsp;defaults&nbsp;to&nbsp;all&nbsp;categories.</font></div></li>
+<li><div class="src-line"><a name="a36"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;</font><em>The&nbsp;</em><font color="#009999">subject&nbsp;that&nbsp;you&nbsp;want&nbsp;reviews&nbsp;for.&nbsp;Optional&nbsp;-&nbsp;defaults&nbsp;to&nbsp;all&nbsp;subjects.</font></div></li>
+<li><div class="src-line"><a name="a37"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;</font><em>The&nbsp;</em><font color="#009999">number&nbsp;of&nbsp;reviews&nbsp;you&nbsp;want&nbsp;returned.&nbsp;Max&nbsp;30.&nbsp;Optional&nbsp;-&nbsp;defaults&nbsp;to&nbsp;10.</font></div></li>
+<li><div class="src-line"><a name="a38"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;</font><em>The&nbsp;</em><font color="#009999">order&nbsp;in&nbsp;which&nbsp;you&nbsp;want&nbsp;reviews&nbsp;returned.&nbsp;Can&nbsp;be&nbsp;either&nbsp;'p'&nbsp;for&nbsp;popularity</font></div></li>
+<li><div class="src-line"><a name="a39"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;'d'&nbsp;for&nbsp;date.&nbsp;Defaults&nbsp;to&nbsp;an&nbsp;API-determined&nbsp;order&nbsp;dependant&nbsp;on&nbsp;the&nbsp;other</font></div></li>
+<li><div class="src-line"><a name="a40"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parameters.</font></div></li>
+<li><div class="src-line"><a name="a41"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a42"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@return&nbsp;</font></strong><em>An&nbsp;</em><font color="#009999">array&nbsp;of&nbsp;reviews&nbsp;matching&nbsp;the&nbsp;specified&nbsp;criteria.</font></div></li>
+<li><div class="src-line"><a name="a43"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@author</font></strong><font color="#009999">&nbsp;Carin&nbsp;Campanario</font></div></li>
+<li><div class="src-line"><a name="a44"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@author</font></strong><font color="#009999">&nbsp;Steve&nbsp;Webster</font></div></li>
+<li><div class="src-line"><a name="a45"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a46"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;output:</font></div></li>
+<li><div class="src-line"><a name="a47"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;***/</font></div></li>
+<li><div class="src-line"><a name="a48"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../SWX/TheTenWordReview.html#methodgetReviews">getReviews</a>&nbsp;<strong>(</strong><strong>$key</strong><strong>,&nbsp;</strong><strong>$user&nbsp;</strong>=&nbsp;NULL<strong>,&nbsp;</strong><strong>$cat&nbsp;</strong>=&nbsp;NULL<strong>,&nbsp;</strong><strong>$review&nbsp;</strong>=&nbsp;NULL<strong>,&nbsp;</strong><strong>$num&nbsp;</strong>=&nbsp;NULL<strong>,&nbsp;</strong><strong>$order&nbsp;</strong>=&nbsp;NULL<strong>)</strong></div></li>
+<li><div class="src-line"><a name="a49"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a50"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$url&nbsp;</strong>=&nbsp;<font color="#66cccc">'thetenwordreview.com/api/reviews/get'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a52"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$vars&nbsp;</strong>=&nbsp;array<strong>(</strong></div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#66cccc">'output'&nbsp;</font>=&gt;&nbsp;<font color="#66cccc">'php'</font><strong>,</strong></div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#66cccc">'key'&nbsp;</font>=&gt;&nbsp;<strong>$key</strong><strong>,</strong></div></li>
+<li><div class="src-line"><a name="a55"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#66cccc">'user'&nbsp;</font>=&gt;&nbsp;<strong>$user</strong><strong>,</strong></div></li>
+<li><div class="src-line"><a name="a56"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#66cccc">'cat'&nbsp;</font>=&gt;&nbsp;<strong>$cat</strong><strong>,</strong></div></li>
+<li><div class="src-line"><a name="a57"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#66cccc">'review'&nbsp;</font>=&gt;&nbsp;<strong>$review</strong><strong>,</strong></div></li>
+<li><div class="src-line"><a name="a58"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#66cccc">'num'&nbsp;</font>=&gt;&nbsp;<strong>$num</strong><strong>,</strong></div></li>
+<li><div class="src-line"><a name="a59"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#66cccc">'order'&nbsp;</font>=&gt;&nbsp;<strong>$order</strong></div></li>
+<li><div class="src-line"><a name="a60"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a61"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a62"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$response&nbsp;</strong>=&nbsp;<strong>$this</strong><strong>-&gt;</strong>_phpCall<strong>(</strong><strong>$url</strong><strong>,&nbsp;</strong><strong>$vars</strong><strong>,&nbsp;</strong><font color="#66cccc">'GET'</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a63"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a64"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font><strong>$response</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a65"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a66"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a67"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a68"></a><strong>?&gt;</strong></div></li>
+</ol></div>
+</div>
+	<div id="credit">
+		<hr />
+		Documentation generated on Fri, 06 Jul 2007 19:54:53 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.1</a>
+	</div>
+</body>
+</html>
