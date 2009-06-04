@@ -152,7 +152,7 @@ define('PROJECT_PACKAGE_NAME', 'be.aboutme');
  * CakePHP session IDs are also regenerated between requests if
  * 'Security.level' is set to 'high'.
  */
-	Configure::write('Security.level', 'high');
+	Configure::write('Security.level', 'medium');
 /**
  * A random string used in security hashing methods.
  */
