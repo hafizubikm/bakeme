@@ -82,7 +82,7 @@ class ViewTask extends Shell {
  * @var array
  * @access public
  */
-	var $scaffoldActions = array('index', 'view', 'add', 'edit');
+	var $scaffoldActions = array('index', 'view', 'add', 'edit', 'paging', 'form');
 /**
  * Override initialize
  *
