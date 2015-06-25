@@ -1,0 +1,1 @@
+This project contains a basic cakephp structure and customized bake scripts, to create better cakephp projects.
